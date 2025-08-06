@@ -1,37 +1,1712 @@
-<html>
-<body>
-  <div id="root"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centrifugation in Chemical Engineering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Basic setup for the scroll-snap container */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent body scroll, container will handle it */
+            font-family: 'Lato', sans-serif;
+            background-color: #f8fafc; /* bg-slate-50 */
+        }
+        
+        /* The main container that enables snap-scrolling */
+        #slides-container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory; /* Crucial for one-slide-at-a-time scroll */
+        }
 
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        /* Styling for each individual slide */
+        .slide {
+            height: 100vh;
+            width: 100vw;
+            scroll-snap-align: start; /* Snap to the top of the viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            box-sizing: border-box;
+            position: relative;
+        }
+        
+        /* Custom scrollbar for the content area within a slide */
+        .slide-content-body::-webkit-scrollbar {
+            width: 8px;
+        }
+        .slide-content-body::-webkit-scrollbar-track {
+            background: #e2e8f0; /* bg-slate-200 */
+        }
+        .slide-content-body::-webkit-scrollbar-thumb {
+            background-color: #64748b; /* bg-slate-500 */
+            border-radius: 10px;
+            border: 3px solid #e2e8f0;
+        }
 
-  <script type="text/babel">
-    const Slide1 = () => (
-      <div className="slide">
-        <h1>Centrifugation in Chemical Engineering</h1>
-        <h2>Principles, Equipment, and Applications</h2>
-      </div>
-    );
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 text-gray-800">
 
-    const Slide2 = () => (
-      <div className="slide">
-        <h1>Centrifugation in Chemical Engineering</h1>
-        <h2>Principles, Equipment, and Applications</h2>
-        <h3>Part 1: Fundamentals and Engineering Background</h3>
-      </div>
-    );
+    <!-- This is where the slides will be dynamically inserted by JavaScript -->
+    <main id="slides-container"></main>
+    
+    <!-- Fixed UI elements: Navigation dots and slide counter -->
+    <div id="side-nav" class="fixed right-5 top-1/2 -translate-y-1/2 flex flex-col gap-2 z-10"></div>
+    <div id="slide-counter" class="fixed bottom-4 right-6 text-lg font-mono text-gray-500 z-10"></div>
 
-    const App = () => (
-      <div>
-        <Slide1 />
-        <hr />
-        <Slide2 />
-      </div>
-    );
+    <script>
+        // The complete slide data is stored here.
+        const rawData = `
+==================================================
+SLIDE 1
+==================================================
 
-    ReactDOM.render(<App />, document.getElementById('root'));
-  </script>
+Centrifugation in Chemical Engineering
+Principles, Equipment, and Applications
+
+
+==================================================
+SLIDE 2
+==================================================
+
+Centrifugation in Chemical Engineering
+Principles, Equipment, and Applications
+Part 1: Fundamentals and Engineering Background
+
+
+==================================================
+SLIDE 3
+==================================================
+
+Introduction to Centrifugation
+What is Centrifugation?
+Process of using centrifugal force to separate components of a mixture based on density differences
+Accelerates separation that would occur naturally under gravity
+Critical unit operation in chemical, pharmaceutical, food, and wastewater industries
+
+
+==================================================
+SLIDE 4
+==================================================
+
+Applications in Chemical Engineering
+Solid-liquid separation (filtration, sedimentation)
+Liquid-liquid separation (immiscible phases)
+Clarification and classification
+Dewatering and drying
+
+
+==================================================
+SLIDE 5
+==================================================
+
+Core Physical Principles
+Centrifugal Force Fundamentals
+Direction: Away from center of rotation
+Generated by rotational motion
+Formula: F_c = m × omega^2 × r
+m = mass
+omega = angular velocity (rad/s)
+r = radius of rotation
+
+
+==================================================
+SLIDE 6
+==================================================
+
+Angular Motion
+omega = 2π × N/60 (rad/s)
+N = rotational speed (RPM)
+Centrifugal Acceleration and Force
+Relative to gravity (g-force)
+
+
+==================================================
+SLIDE 7
+==================================================
+
+Centrifugation Number (z)
+Expresses centrifugal acceleration as multiple of gravity
+Formula: z = (π^2 × D × n^2)/(900 × g)
+D = diameter (m)
+n = rotational speed (rpm)
+g = gravitational acceleration (9.81 m/s²)
+
+
+==================================================
+SLIDE 8
+==================================================
+
+Capacity Factor
+Relates key operating parameters to throughput capacity
+Formula: f = z × Δt × m
+z = centrifugation number
+Δt = residence time (s)
+m = throughput capacity (t/h)
+Universal dimensionless factor for comparing different centrifuges
+Essential for scale-up calculations and equipment selection
+
+
+==================================================
+SLIDE 9
+==================================================
+
+Particle Movement Physics
+Stokes' Law Application
+Settling velocity: V_s = [d^2(ρ_p - ρ_m)ω^2r]/(18η)
+d = particle diameter
+ρ_p = particle density
+ρ_m = medium density
+η = medium viscosity
+
+
+==================================================
+SLIDE 10
+==================================================
+
+Practical Implications
+Larger, denser particles separate faster
+Separation time decreases with:
+Increased rotation speed
+Decreased viscosity
+Greater density difference
+
+
+==================================================
+SLIDE 11
+==================================================
+
+Categories of Centrifugal Separation
+Major Separation Categories
+1. Basic Separation
+Divides feed slurry into solid and liquid streams
+May use polymers to enhance fine particle capture
+
+
+==================================================
+SLIDE 12
+==================================================
+
+Categories of Centrifugal Separation (cont.)
+2. Clarification
+Focused on producing clean liquid phase
+Prioritizes liquid quality over solids recovery
+3. Classification
+Separates particles based on size
+Controls particle size distribution in product
+
+
+==================================================
+SLIDE 13
+==================================================
+
+Additional Separation Categories
+4. Degritting
+Removes coarse particles from suspensions
+Protects downstream equipment
+5. Deliquoring
+Reduces liquid content in solid materials
+Critical for downstream processing
+
+
+==================================================
+SLIDE 14
+==================================================
+
+Additional Separation Categories (cont.)
+6. Washing
+Removes impurities from solid phase
+Uses appropriate wash liquid or solvent
+7. Deliquoring with Reslurrying
+Combined process for enhanced purification
+
+
+==================================================
+SLIDE 15
+==================================================
+
+Centrifuge Classification
+Two Major Types:
+1. Sedimentation Centrifuges
+Require density difference between phases
+Use solid, imperforate bowls
+Examples: tubular bowl, disk stack, decanter
+
+
+==================================================
+SLIDE 16
+==================================================
+
+Centrifuge Classification (cont.)
+2. Filtering Centrifuges
+Use permeable medium to retain solids
+Allow liquid to pass through under centrifugal force
+Examples: basket, pusher, scroll screen
+
+
+==================================================
+SLIDE 17
+==================================================
+
+Sedimentation Centrifuges: Mechanism
+Fundamental Operation
+Particles move under centrifugal force
+Force magnitude depends on:
+Rotational speed
+Particle mass
+Distance from rotation axis
+
+
+==================================================
+SLIDE 18
+==================================================
+
+Settlement Process
+Particles move radially outward
+Settlement rate depends on:
+Particle size and density
+Liquid viscosity
+Applied g-force
+
+
+==================================================
+SLIDE 19
+==================================================
+
+Sedimentation Centrifuge Types
+Type Centrifugal Force Capacity Flow Pattern
+Tubular bowl 16,000g 20 gal/min Liquid: continuous, Solids: batch
+Disk stack (solid wall) 9,000g 200 gal/min Liquid: continuous, Solids: batch
+Disk (valve discharge) 6,000g 50 gal/min Liquid: continuous, Solids: intermittent
+Disk (nozzle discharge) 9,000g 400 gal/min Liquid: continuous, Solids: continuous
+Decanter 3,200g - Both: continuous
+
+
+==================================================
+SLIDE 20
+==================================================
+
+Sedimentation Centrifuge Theory
+Sigma Theory (Σ)
+Primary design method for scale-up and equipment sizing
+Relates centrifuge performance to equivalent settling area
+Σ = (ω^2/2g) × ∫r×dA
+Used for comparing different centrifuge designs
+
+
+==================================================
+SLIDE 21
+==================================================
+
+Sigma Theory (cont.)
+Foundation of the "equivalent settling area" approach
+Scale-up relationship: For similar separation efficiency, Q_1/Σ_1 = Q_2/Σ_2
+
+
+==================================================
+SLIDE 22
+==================================================
+
+Flow and Separation Mathematics
+Darcy's Law for filtration flow rate: Q = (ΔP×A)/(μ×R)
+ΔP = pressure differential (centrifugal force)
+A = filtration area
+μ = fluid viscosity
+R = cake resistance
+
+
+==================================================
+SLIDE 23
+==================================================
+
+Scale-Up Parameters
+Throughput capacity (Q)
+Required separation efficiency
+Critical particle size (x50)
+Bowl geometry ratio (L/D)
+
+
+==================================================
+SLIDE 24
+==================================================
+
+Decanter Centrifuge: Components
+Key Components
+Solid-wall rotor (cylindrical + conical combination)
+Helical screw conveyor with differential speed
+Gearbox (planetary or "cyclo" type)
+Feed tube, casing, frame, drive system
+
+
+==================================================
+SLIDE 25
+==================================================
+
+Decanter Configuration
+Horizontal or vertical rotational axis
+Differential speed: 0.6–2.5% of bowl speed
+Gearbox attaches to bowl hub
+
+
+==================================================
+SLIDE 26
+==================================================
+
+Decanter Centrifuge: Operation
+Process Flow
+Feed enters through stationary tube
+Accelerated to bowl speed in rotating zone
+Centrifugal force separates phases
+Solids move via conveyor to discharge
+Continuous operation for both phases
+
+
+==================================================
+SLIDE 27
+==================================================
+
+Key Operating Parameters
+Pond length
+Pond depth
+Beach angle
+Differential speed
+
+
+==================================================
+SLIDE 28
+==================================================
+
+Screen Bowl Decanter Centrifuge
+Design Features
+Combines conventional decanter with perforated screen extension
+Extends solids residence time for additional drainage
+Screen retention time: up to 10 seconds (vs. ~2 sec on conventional beach)
+
+
+==================================================
+SLIDE 29
+==================================================
+
+Performance Benefits
+Significantly reduces retained mother liquor
+Typical improvement: 30% → 10% retained moisture
+Note: Not all improvement from screen drainage alone
+
+
+==================================================
+SLIDE 30
+==================================================
+
+Scroll Geometry and Transport Mechanics
+Importance of Conveying Speed
+Directly dictates residence time of solids within centrifuge
+Critically affects:
+Dewatering efficiency: Longer residence times allow more complete liquid drainage
+Washing effectiveness: Sufficient time needed for displacement washing (4-15 seconds typical)
+
+
+==================================================
+SLIDE 31
+==================================================
+
+Scroll Geometry Effects (cont.)
+Throughput capacity: Sets the rate at which solids move toward discharge
+Particle integrity: Influences potential for particle attrition or breakage
+
+
+==================================================
+SLIDE 32
+==================================================
+
+Role of Scroll Geometry
+Physical configuration fundamentally determines solids transport rate
+Manufacturers tailor geometries to specific applications
+Key parameters interact with differential speed to establish conveying dynamics
+Critical for optimizing performance and product quality
+
+
+==================================================
+SLIDE 33
+==================================================
+
+Key Geometric Parameters
+1. Scroll Diameter (Ds)
+Outer diameter of the scroll flights
+Varies axially in conical centrifuges
+Defines conveying channel boundary
+
+
+==================================================
+SLIDE 34
+==================================================
+
+Key Geometric Parameters (cont.)
+2. Scroll Pitch (P)
+Axial distance per 360° turn of the helix
+Directly influences conveying speed
+Standard pitch (P=D), Short (P=2/3D, P=1/2D), Long (P=1.5D)
+
+
+==================================================
+SLIDE 35
+==================================================
+
+Key Geometric Parameters (cont.)
+3. Flight Height (Hf)
+Radial height of the flight from central hub
+Defines cross-sectional area for material flow
+4. Helix Angle (α)
+Angle of flight relative to plane normal to axis
+Calculated as: tan(α)=P/(πD) or tan(α)=P/(2πr)
+Influences force components and efficiency
+
+
+==================================================
+SLIDE 36
+==================================================
+
+Key Geometric Parameters (cont.)
+5. Number of Leads/Flights
+Single or multiple parallel helical flights
+Multi-lead increases theoretical capacity per revolution
+6. Cone Angle (θc)
+Angle of screen/basket relative to axis
+Typical range: 0° - 20°
+Affects axial component of centrifugal force
+Contributes to solids transport through gravitational/centrifugal forces
+
+
+==================================================
+SLIDE 37
+==================================================
+
+Key Geometric Parameters (cont.)
+7. Flight Thickness (tf) and Shaft Diameter (dc)
+Reduce effective conveying volume/area
+Important for accurate capacity calculations
+
+
+==================================================
+SLIDE 38
+==================================================
+
+Scroll Geometry (continued)
+The transport process is aided by the inclination of the conical basket wall
+Solids often accumulate in piles of triangular cross-section ahead of scroll flights
+Scroll performs dual regulatory function:
+In wet zones: Holds back material that would slide too quickly
+In dry zones: Actively pushes material toward discharge
+Adapts to changing frictional properties as material dewaters
+
+
+==================================================
+SLIDE 39
+==================================================
+
+Axial Velocity and Efficiency Calculations
+Axial Conveying Velocity
+Theoretical volumetric throughput: Q_th = (π/4)(D_s^2-d_c^2)P×Δ N×η_vol
+Axial velocity: v_ax = Q_th/A_eff = [(π/4)(D_s^2-d_c^2)P×Δ N×η_vol]/[(π/4)(D_s^2-d_c^2)η_fill]
+Simplified as: v_ax = P × ΔN × η_slip
+
+
+==================================================
+SLIDE 40
+==================================================
+
+Vortex Efficiency (Theoretical Conveying Efficiency)
+Based on helix angle and friction: η_vortex = [tan(α_m+ρ')]/[tan(α_m)]
+α_m = helix angle at effective radius
+ρ' = effective friction angle
+Shorter pitches reduce theoretical capacity but increase efficiency against resistance
+
+
+==================================================
+SLIDE 41
+==================================================
+
+Differential Speed and Conveying Rate
+Differential Speed Calculation Methods
+For fixed eccentric shaft: Δn = n_TR/i
+For dual drive systems: Δn = n_TR - (n_EXZ × i)
+n_TR = drum speed
+n_EXZ = eccentric shaft speed
+i = gear ratio (typically 1:15 to 1:40)
+
+
+==================================================
+SLIDE 42
+==================================================
+
+Scroll Speed Calculation
+Scroll rotational speed: n_Schn = n_TR + (n_EXZ - n_TR)/i
+Leading operation: Positive differential (scroll faster than drum)
+Trailing operation: Negative differential (scroll slower than drum)
+
+
+==================================================
+SLIDE 43
+==================================================
+
+Drainage and Saturation Fundamentals
+Equilibrium Saturation (S∞)
+Fundamental equation: S_∞ = k'd^(-0.4)(ω^2r/g)^(-0.3)ρ_L^(-0.25)
+S_∞ = final volume of liquid per volume of solid
+k' = material-dependent constant
+d = mean particle diameter (m)
+ω = angular velocity (rad/s)
+r = radius (m)
+ρ_L = liquid density (kg/m³)
+
+
+==================================================
+SLIDE 44
+==================================================
+
+Time-Dependent Saturation
+During film drainage: S = [k'/d][(r_2-r_c)/t]^A + S_∞
+r_2-r_c = cake thickness (m)
+A = coefficient (0.5-1.0 for incompressible materials)
+t = drainage time (s)
+
+
+==================================================
+SLIDE 45
+==================================================
+
+Zeitsch Drainage Model
+Zeitsch Drainage Number: D = [lzrω^2ρ^2H^2]/[εd cos^2 θ]
+l = constant
+z = centrifugal acceleration factor
+H = cake thickness
+ε = porosity
+θ = contact angle
+Time-dependent saturation: S_t = S_∞ + (1-S_∞)e^(-φt)
+Drainage rate constant: φ = [d cos^2 θ]/[2ω^2ρr_o]
+
+
+==================================================
+SLIDE 46
+==================================================
+
+Dimensionless Time Analysis
+t_D = [μ_L/ρ_L][h G t/h^2]
+μ_L = liquid viscosity
+ρ_L = liquid density
+h = cake height
+G = centrifugal acceleration
+t = time
+
+
+==================================================
+SLIDE 47
+==================================================
+
+Cone Angle Effects on Transport
+Component of Centrifugal Force Along Screen
+Parallel force component: F_{c,parallel} = F_c sin(θ_c) = mω^2r×sin(θ_c)
+This assists in axial transport toward larger diameter end
+
+
+==================================================
+SLIDE 48
+==================================================
+
+Transport Force Balance
+For particles on inclined screen:
+Driving forces: Scroll push + Component of centrifugal force
+Resisting forces: Friction against screen × Normal force
+Normal force amplified by centrifugal acceleration
+
+
+==================================================
+SLIDE 49
+==================================================
+
+Calculating Transport in Practice
+Empirical Approach
+1. Start with theoretical relationship: v_ax = P × ΔN
+2. Adjust for non-standard geometry using capacity factors (CF)
+Short pitch (P=2/3D): CF = 1.50
+Half pitch (P=1/2D): CF = 2.00
+3. Apply efficiency factor based on material properties
+Estimated range: 0.3-0.8 depending on material
+4. Calculate residence time: t = (60 × w)/Δn
+5. Adjust differential speed to achieve desired residence time
+
+
+==================================================
+SLIDE 50
+==================================================
+
+Residence Time Control
+Residence Time Calculation
+t = (60 × w)/Δn
+t = residence time (seconds)
+w = number of scroll turns/flights
+Δn = differential speed (rpm)
+
+
+==================================================
+SLIDE 51
+==================================================
+
+Process Implications
+Residence time remains constant regardless of feed quantity
+Longer residence time improves dewatering but reduces throughput
+Shorter residence time increases capacity but may reduce separation efficiency
+
+
+==================================================
+SLIDE 52
+==================================================
+
+Scroll Efficiency Factors
+Factors Affecting Conveying Efficiency
+Friction between material and screen/scroll surfaces
+Cone angle contribution to axial movement
+G-force magnitude
+Material properties (especially moisture content)
+
+
+==================================================
+SLIDE 53
+==================================================
+
+Modified Capacity Factors
+Standard pitch scroll: CF = 1.00
+Short pitch (P=2/3D): CF = 1.50
+Half pitch (P=1/2D): CF = 2.00
+Flight modifications (cut, folded): CF = 1.50-3.75
+
+
+==================================================
+SLIDE 54
+==================================================
+
+Scale-Up Methodologies for Centrifuges
+Comparative Scale-Up Approaches
+1. Sigma Theory (Equivalent Settling Area)
+Primary method for sedimentation centrifuges
+Based on: Σ = (ω^2/2g) × ∫r×dA
+Proportional relationship: Q_1/Σ_1 = Q_2/Σ_2
+
+
+==================================================
+SLIDE 55
+==================================================
+
+Sigma Theory Applications
+Works well for dilute suspensions with minimal particle interaction
+Limitation: Does not account for residence time effects
+For tubular bowl: Σ = 2πω^2L/3g
+For disk stack: Σ = 2πω^2n_d/3g·tan α
+For decanter: Σ = [2πω^2L/g][2r_1r_2/3]
+
+
+==================================================
+SLIDE 56
+==================================================
+
+Capacity Factor Approach (C-Value Method)
+Comprehensive approach that extends beyond Sigma theory
+Incorporates residence time and g-force: f = z × Δt × m
+Universal dimensionless number for comparing machines
+Applicable across different centrifuge types
+Better accounts for solids behavior in concentrated suspensions
+
+
+==================================================
+SLIDE 57
+==================================================
+
+Capacity Factor Approach (cont.)
+Particularly valuable for screen-scroll and dewatering applications
+Scale-up formula: m_2 = m_1 × [z_1 × Δt_1]/[z_2 × Δt_2]
+
+
+==================================================
+SLIDE 58
+==================================================
+
+Combined Methodologies for Robust Scale-Up
+Use Sigma theory for initial sizing of sedimentation centrifuges
+Apply Capacity Factor for final validation and residence time effects
+Both approaches complement each other for comprehensive analysis
+Critical to maintain dimensionless ratios across scales
+For optimum design: Capacity Factor analysis + Drainage model with S_∞ calculations
+
+
+==================================================
+SLIDE 59
+==================================================
+
+Case Study: Capacity Factor Application
+100% capacity reached at:
+z = 282 g
+Δt = 4.63 s
+m = 58 t/h KCl
+Calculated Capacity Factor: f = z × Δt × m = 75,728
+Alternative centrifuge with z = 353 g, Δt = 4.14 s
+Calculated capacity: m = f/(z×Δt) = 51.8 t/h KCl
+Demonstrates how theoretical frameworks translate to practical design decisions
+
+
+==================================================
+SLIDE 60
+==================================================
+
+Operational Aspects and Best Practices
+Operational Guidelines
+Proper startup and shutdown procedures
+Regular monitoring of key parameters
+Preventative maintenance schedule
+
+
+==================================================
+SLIDE 61
+==================================================
+
+Common Issues and Solutions
+Cake discharge problems
+Screen blinding
+Vibration and imbalance
+Differential speed optimization
+
+
+==================================================
+SLIDE 62
+==================================================
+
+Economic Considerations
+Capital vs. Operating Costs
+Initial investment vs. lifetime operating expenses
+Energy consumption increases with g-force
+Maintenance requirements vary by design
+
+
+==================================================
+SLIDE 63
+==================================================
+
+Optimization Opportunities
+Feed preconcentration
+Polymer addition
+Process integration
+Heat recovery
+
+
+==================================================
+SLIDE 64
+==================================================
+
+Summary: Selecting the Right Centrifuge
+Decision Process
+1. Define separation requirements
+2. Evaluate material properties
+3. Consider scale and throughput needs
+4. Compare centrifuge types and configurations
+5. Assess economic factors
+6. Pilot testing for validation
+
+
+==================================================
+SLIDE 65
+==================================================
+
+Best Practices
+Consider future flexibility needs
+Factor in maintenance accessibility
+Evaluate total cost of ownership
+
+
+==================================================
+SLIDE 66
+==================================================
+
+CONTURBEX H1000 Centrifuges at Arab Potash Company
+Part 2: Industrial Application Case Study with Engineering Calculations
+
+
+==================================================
+SLIDE 67
+==================================================
+
+Introduction to Arab Potash Company Application
+Arab Potash Company Limited (APC) is a major producer of potassium chloride (KCl) located in Jordan.
+The company uses a process involving carnallite crystallization followed by two-stage product recovery to
+produce high-grade potash. The solid-liquid separation technology selected for this application consists
+of CONTURBEX H1000 scroll-screen centrifuges manufactured by Siebtechnik GmbH.
+
+
+==================================================
+SLIDE 68
+==================================================
+
+Introduction (cont.)
+This case study examines the application of centrifugation theory in a real industrial context, with specific
+focus on how the theoretical principles are applied to achieve optimal separation performance across
+multiple process streams with varying characteristics.
+
+
+==================================================
+SLIDE 69
+==================================================
+
+Process Overview
+The Arab Potash Company installation features three distinct centrifuge applications:
+Carnallite Centrifuges: Separate carnallite crystals (KCl·MgCl₂·6H₂O) from brine
+1st Stage Product Centrifuges: Process the decomposed carnallite to recover KCl
+2nd Stage Product Centrifuges: Further process KCl for final product refinement
+
+
+==================================================
+SLIDE 70
+==================================================
+
+Process Challenges
+Each application presents unique challenges in terms of material properties, flow rates, and separation
+requirements - necessitating careful equipment selection and operating parameter optimization.
+
+
+==================================================
+SLIDE 71
+==================================================
+
+Technical Specifications of CONTURBEX H1000 Centrifuges
+Common Design Features
+All three centrifuge applications utilize the CONTURBEX H1000 platform, characterized by:
+Manufacturer: Siebtechnik GmbH, Mulheim (Germany)
+Type: Horizontal screen scroll centrifuge
+Nominal Basket Diameter: 1,000 mm
+Screen Basket Length: 645 mm
+
+
+==================================================
+SLIDE 72
+==================================================
+
+Technical Specifications (cont.)
+Effective Screening Surface: 16,499 cm²
+Screen Openings: 0.20 mm
+Screen Open Area: 8.3%
+Maximum Operational Speed: 1,100 RPM
+Maximum Centrifugal Force: 69.4 N/mm² at 1,100 RPM
+
+
+==================================================
+SLIDE 73
+==================================================
+
+Technical Specifications (cont.)
+Dimensions (L×W×H): 2,520 × 2,480 × 1,950 mm
+Total Weight: 6,500 kg
+Worm Speed Relative to Basket: 13 (differential speed factor)
+
+
+==================================================
+SLIDE 74
+==================================================
+
+Application-Specific Configurations
+Despite sharing the same basic platform, the CONTURBEX H1000 centrifuges at Arab Potash Company
+are supplied in two different configurations to optimize handling of different process streams:
+
+
+==================================================
+SLIDE 75
+==================================================
+
+Retarded Scroll Configuration (Machine No. 6834 + 6835)
+Drive Type: Double drive system
+Operating Mode: Lagging (nacheilend)
+Differential Speed: -12.1 rpm (scroll rotates slower than drum)
+Retention Time: 4.97 seconds
+Application: Used for materials requiring longer residence time and gentler handling
+
+
+==================================================
+SLIDE 76
+==================================================
+
+Advanced Scroll Configuration (Machine No. 6836 + 6837)
+Drive Type: Single drive system
+Operating Mode: Leading (voreilend)
+Differential Speed: +13.5 rpm (scroll rotates faster than drum)
+Retention Time: 4.44 seconds
+Application: Used for materials that benefit from faster transport and higher throughput
+
+
+==================================================
+SLIDE 77
+==================================================
+
+Process-Specific Applications:
+Carnallite Centrifuges (Equipment No. 20-21-011, 012, etc.)
+Number of Units: 10 (including one spare)
+Operational Capacity: 28.3/46.4 tph
+Power Rating: 34.3/90 kW (operating/rated)
+Torque (operating/max): 8,539/14,000 Nm
+Configuration: Advanced scroll for handling the larger carnallite crystals
+
+
+==================================================
+SLIDE 78
+==================================================
+
+Process-Specific Applications (cont.)
+1st Stage Product Centrifuges (Equipment No. 20-21-021, 022, etc.)
+Number of Units: 3 (including one spare)
+Operational Capacity: 38.3/46.4 tph
+Power Rating: 43.6/90 kW (operating/rated)
+Torque (operating/max): 11,560/14,000 Nm
+Configuration: Mixed (advanced and retarded) based on specific processing needs
+
+
+==================================================
+SLIDE 79
+==================================================
+
+Process-Specific Applications (cont.)
+2nd Stage Product Centrifuges (Equipment No. 20-21-031, 032, etc.)
+Number of Units: 3 (including one spare)
+Operational Capacity: 37.4/46.4 tph
+Power Rating: 42.7/90 kW (operating/rated)
+Torque (operating/max): 11,280/14,000 Nm
+Configuration: Primarily retarded scroll for optimizing final moisture content
+
+
+==================================================
+SLIDE 80
+==================================================
+
+Configuration Rationale
+These configuration differences reflect the varying demands of each separation stage, with operating
+mode selection directly related to the specific material properties, crystal fragility, and moisture removal
+requirements.
+
+
+==================================================
+SLIDE 81
+==================================================
+
+Process Stream Analysis
+Carnallite Centrifuges Feed Stream
+The feed to the carnallite centrifuges represents the most challenging separation task:
+Solids Composition (tph)
+NaCl: 12.0
+Carnallite: 242.7
+Total Solids: 254.7 (45% by weight)
+
+
+==================================================
+SLIDE 82
+==================================================
+
+Carnallite Feed Stream (cont.)
+Liquid Composition (tph)
+Brine: 311.2
+Total Stream (tph): 565.9
+Stream Characteristics
+Flow Rate: 396.2 m³/hr
+Stream Density: 1.428 g/cc
+Liquid Density: 1.302 g/cc
+Temperature: 31°C
+Viscosity: 5 cP
+
+
+==================================================
+SLIDE 83
+==================================================
+
+Carnallite Feed Stream (cont.)
+Feed Particle Size Distribution
+1.40 mm: 5% ± 10%
+1.00 mm: 13% ± 10%
+0.50 mm: 29% ± 10%
+0.25 mm: 50% ± 10%
+0.16 mm: 68% ± 10%
+The significant proportion of large carnallite crystals and high solids loading (45%) requires robust
+mechanical design and optimized differential speed to prevent excessive torque.
+
+
+==================================================
+SLIDE 84
+==================================================
+
+1st Stage Product Centrifuges Feed Stream
+Solids Composition (tph)
+KCl: 74.29
+NaCl: 2.30
+Carnallite: Negligible
+Total Solids: 76.59 (45% by weight)
+
+
+==================================================
+SLIDE 85
+==================================================
+
+1st Stage Product Feed Stream (cont.)
+Liquid Composition (tph)
+Brine: 93.61
+Total Stream (tph): 170.20
+Stream Characteristics
+Flow Rate: 112.82 m³/hr
+Stream Density: 1.509 g/cc
+Liquid Density: 1.258 g/cc
+Temperature: 26°C
+Viscosity: 5 cP
+
+
+==================================================
+SLIDE 86
+==================================================
+
+1st Stage Product Feed Stream (cont.)
+Feed Particle Size Distribution
+0.80 mm: 2% ± 10%
+0.60 mm: 5% ± 10%
+0.50 mm: 10% ± 10%
+0.30 mm: 35% ± 10%
+0.21 mm: 75% ± 10%
+The 1st stage product stream contains primarily KCl crystals of smaller size than the carnallite feed,
+requiring more precise screen selection to minimize product loss.
+
+
+==================================================
+SLIDE 87
+==================================================
+
+2nd Stage Product Centrifuges Feed Stream
+Solids Composition (tph)
+KCl: 72.68
+NaCl: 2.19
+Carnallite: Negligible
+Total Solids: 74.87 (45% by weight)
+
+
+==================================================
+SLIDE 88
+==================================================
+
+2nd Stage Product Feed Stream (cont.)
+Liquid Composition (tph)
+Brine: 91.42
+Total Stream (tph): 166.29
+Stream Characteristics
+Flow Rate: 110.29 m³/hr
+Stream Density: 1.509 g/cc
+Liquid Density: 1.258 g/cc
+Temperature: 26°C
+Viscosity: 5 cP
+
+
+==================================================
+SLIDE 89
+==================================================
+
+2nd Stage Product Feed Stream (cont.)
+Feed Particle Size Distribution
+0.80 mm: 0.2% ± 10%
+0.60 mm: 2.0% ± 10%
+0.50 mm: 6.0% ± 10%
+0.30 mm: 43.0% ± 10%
+0.21 mm: 80.0% ± 10%
+The 2nd stage shows a further refinement in particle size distribution, with a greater proportion of finer
+particles that present increased challenges for efficient dewatering.
+
+
+==================================================
+SLIDE 90
+==================================================
+
+Separation Performance Analysis
+The separation results demonstrate the effectiveness of the centrifuges:
+Carnallite Centrifuges
+Feed: 254.7 tph solids, 45% solids by weight
+Cake: 203.7 tph solids, 93% solids by weight
+Effluent: 51.0 tph solids, 14.7% solids by weight
+
+
+==================================================
+SLIDE 91
+==================================================
+
+Separation Performance (cont.)
+1st Stage Product Centrifuges
+Feed: 76.59 tph solids, 45% solids by weight
+Cake: 61.29 tph solids, 93% solids by weight
+Effluent: 15.30 tph solids, 11.4% solids by weight
+2nd Stage Product Centrifuges
+Feed: 74.87 tph solids, 45% solids by weight
+Cake: 59.92 tph solids, 93% solids by weight
+Effluent: 14.95 tph solids, 11.4% solids by weight
+
+
+==================================================
+SLIDE 92
+==================================================
+
+Performance Results
+This performance achieves the critical process requirement of 7% maximum brine content (4.7% free
+water) in the cake product, essential for downstream processing efficiency.
+
+
+==================================================
+SLIDE 93
+==================================================
+
+Engineering Design Analysis and Calculations
+Centrifugal Force and Separation Principles
+The centrifugal force is the fundamental principle behind the operation of the CONTURBEX H1000
+centrifuges at Arab Potash Company. The key equations governing this process are:
+
+
+==================================================
+SLIDE 94
+==================================================
+
+Angular Velocity Calculation
+1. Angular Velocity Calculation: omega = 2π × N/60
+For the APC centrifuges at 797 rpm: omega = 2π × 797/60 = 83.46 rad/s
+
+
+==================================================
+SLIDE 95
+==================================================
+
+Relative Centrifugal Force
+2. Relative Centrifugal Force (RCF): RCF = r×omega^2/g = r×(2π×N/60)^2/g
+With the simplified formula: RCF = 1.118 × 10^-5 × r × N^2
+For the H1000 centrifuge with drum radius r = 0.509 m at operating speed: RCF = 1.118 × 10^-5 × 509 ×
+797^2 = 353g
+
+
+==================================================
+SLIDE 96
+==================================================
+
+Centrifugation Number
+3. Centrifugation Number (z): z = (π^2 × D × n^2)/(900 × g)
+For the APC installation with D = 1.018 m and n = 797 rpm: z = (π^2 × 1.018 × 797^2)/(900 × 9.81) =
+353
+This aligns with the RCF calculation and confirms the designed centrifugal acceleration.
+
+
+==================================================
+SLIDE 97
+==================================================
+
+Residence Time and Differential Speed Analysis
+The residence time is crucial for achieving optimal moisture content in the final product:
+1. Residence Time Equation: t = (60 × w)/Δn
+Where w is the number of scroll turns and Δn is the differential speed.
+
+
+==================================================
+SLIDE 98
+==================================================
+
+Differential Speed Calculation
+2. Differential Speed Calculation:
+For fixed gearbox: Δn = n_TR/i
+For dual drive: Δn = n_TR - (n_EXZ × i)
+For the retarded scroll configuration: Δn = -12.1 rpm (gear ratio i = 59)
+t = (60 × w)/12.1 = 4.97 seconds
+For the advanced scroll configuration: Δn = +13.5 rpm
+t = (60 × w)/13.5 = 4.44 seconds
+
+
+==================================================
+SLIDE 99
+==================================================
+
+Gap Dimensioning
+3. Gap Dimensioning: The gap between scroll and drum is maintained at 1.5-2.0‰ of nominal drum
+diameter.
+For the H1000 with drum diameter of 1018 mm: Gap = (1.5 to 2.0) × 1.018 = 1.53 to 2.04 mm
+This precise gap enables efficient transport while preventing damage.
+
+
+==================================================
+SLIDE 100
+==================================================
+
+Sedimentation and Drainage Analysis
+The moisture content of the final product is influenced by the sedimentation and drainage processes:
+1. Sedimentation Velocity: V_s = [d^2(ρ_p-ρ_m)ω^2r]/(18η)
+
+
+==================================================
+SLIDE 101
+==================================================
+
+Sedimentation Velocity Calculation
+For potash crystals with d = 0.5 mm, particle density ρp = 1.98 g/cm³, in brine with density ρm = 1.302
+g/cm³ and viscosity η = 5 cP:
+V_s = [0.5^2 × 10^-6 × (1980-1302) × 83.46^2 × 0.509]/[18 × 5 × 10^-3]
+V_s = 17.3 cm/s
+This high sedimentation velocity ensures efficient solid-liquid separation.
+
+
+==================================================
+SLIDE 102
+==================================================
+
+Drainage Assessment
+2. Drainage Assessment: The final moisture content follows the relationship: S =
+dk'[ρ_L(ω^2r/g)μ]t^B(r^2-r_c^2)^A + S_∞
+Where S_∞ = kd^(-0.5)(ω^2r/g)^(-0.5)ρ_L^(-0.25)
+For the APC installation, this translates to the target 7% maximum brine content (4.7% free water).
+
+
+==================================================
+SLIDE 103
+==================================================
+
+Dimensionless Time Analysis
+3. Dimensionless Time Analysis: t_D = (μ_L/ρ_L)(hGt/h^2)
+This parameter helps optimize the balance between throughput and moisture content.
+
+
+==================================================
+SLIDE 104
+==================================================
+
+Design Implementation at Arab Potash Company
+The engineering calculations directly informed the centrifuge design and configuration at APC:
+1. Selection of Dual Configuration Types:
+Retarded scroll for final product stages where moisture content is critical
+Advanced scroll for carnallite processing where throughput is prioritized
+
+
+==================================================
+SLIDE 105
+==================================================
+
+Design Implementation (cont.)
+2. Optimization of Differential Speed:
+Carnallite centrifuges: Configured for W > 1 operation
+Product centrifuges: Configured for W ≈ 1 operation at transition zone
+3. Screen Selection Based on Particle Size Distribution:
+0.20 mm apertures with 8.3% open area
+Optimized for particle size distributions with d50 ranging from 0.16-0.8 mm across applications
+
+
+==================================================
+SLIDE 106
+==================================================
+
+Capacity Factor Implementation
+4. Capacity Factor Implementation: The benchmark capacity factor of 75,728 translated to operational
+capacities of:
+51.8 t/h for retarded scroll configuration
+48.3 t/h for advanced scroll configuration
+With safety factors applied, actual operating capacities range from 28.3-38.3 t/h.
+
+
+==================================================
+SLIDE 107
+==================================================
+
+Design Implementation Summary
+These calculations demonstrate how theoretical equations are applied to practical design decisions in the
+CONTURBEX H1000 centrifuges at Arab Potash Company, optimizing performance across multiple
+process streams with varying characteristics.
+
+
+==================================================
+SLIDE 108
+==================================================
+
+Capacity Factor Analysis for Installation Sizing
+Building on the fundamental equations, the capacity factor approach provides a standardized method for
+comparing and scaling centrifuge performance across different applications and operating conditions:
+1. Capacity Factor Formulation: f = z · Δt · m
+Where:
+z = centrifugal acceleration (g-force)
+Δt = residence time (seconds)
+m = throughput capacity (tonnes/hour)
+
+
+==================================================
+SLIDE 109
+==================================================
+
+Benchmark Determination
+2. Benchmark Determination: The reference benchmark for this application showed that 100% capacity
+was reached with:
+z = 282 g
+Δt = 4.63 s
+m = 58 t/h KCl
+This yields a capacity factor of: f = 282 × 4.63 × 58 = 75,728
+
+
+==================================================
+SLIDE 110
+==================================================
+
+Arab Potash Installation Sizing
+3. Arab Potash Installation Sizing: Using the established capacity factor, the 100% capacity is calculated
+based on the actual operating parameters:
+For retarded scroll configuration (Δt = 4.97 s): m = f/(z × Δt) = 75,728/(353 × 4.97) = 43.2 t/h KCl
+For advanced scroll configuration (Δt = 4.44 s): m = f/(z × Δt) = 75,728/(353 × 4.44) = 48.3 t/h KCl
+
+
+==================================================
+SLIDE 111
+==================================================
+
+Safety Factor Application
+Applying a safety factor of 25-30% for operational flexibility:
+Carnallite centrifuges: 28.3/46.4 tph (actual/maximum)
+1st Stage Product centrifuges: 38.3/46.4 tph
+2nd Stage Product centrifuges: 37.4/46.4 tph
+
+
+==================================================
+SLIDE 112
+==================================================
+
+Installation Optimization Trade-offs
+4. Installation Optimization Trade-offs:
+Advanced scroll: Higher throughput (48.3 t/h theoretical) with potentially higher residual
+moisture
+Retarded scroll: Lower throughput (43.2 t/h theoretical) with improved dewatering efficiency
+Different configurations selected based on process stream requirements
+
+
+==================================================
+SLIDE 113
+==================================================
+
+Capacity Factor Methodology Benefits
+This capacity factor methodology allows for consistent sizing across the three different applications at
+Arab Potash Company while accounting for the unique separation characteristics of each process stream.
+
+
+==================================================
+SLIDE 114
+==================================================
+
+Mechanical Components, Materials of Construction, and Wear
+Critical Mechanical Components
+Screen Basket Assembly
+Material: Austenitic stainless steel (1.4435/316L for drum, 1.4016 for screen)
+Design Features: Conical design with 20° half-cone angle
+Critical Specification: 0.20 mm apertures with 8.3% open area
+
+
+==================================================
+SLIDE 115
+==================================================
+
+Screen Basket
+Screen Diameter: 997.7 mm (internal), 1018 mm (drum diameter)
+Effective Screening Surface: 1.65 m²
+Wear Considerations: Progressive aperture enlargement affects separation efficiency; design allows
+for 20% wear before replacement
+
+
+==================================================
+SLIDE 116
+==================================================
+
+Scroll Conveyor
+Material: Base is stainless steel with wear-resistant coating at contact surfaces
+Weight: 375 kg
+Design Features: Helical flight with differential speed ratio (+13.5 rpm advanced or -12.1 rpm retarded)
+Critical Specification: Flight-to-basket clearance maintained at 1.0-1.5‰ of nominal diameter
+Wear Considerations: Progressive flight wear increases clearance, reducing transport efficiency
+
+
+==================================================
+SLIDE 117
+==================================================
+
+Troubleshooting Common Issues
+High Residual Moisture in Product
+Potential Causes:
+Screen plugging (most common)
+Reduced basket speed
+Excessive feed rate
+Changed feed characteristics
+
+
+==================================================
+SLIDE 118
+==================================================
+
+Troubleshooting High Moisture (cont.)
+Diagnostic Steps:
+Check motor current draw
+Verify basket speed
+Collect feed samples for analysis
+Inspect vibration trends
+Corrective Actions:
+Clean screen (chemical or mechanical methods)
+Adjust operating parameters
+Address mechanical issues if present
+
+
+==================================================
+SLIDE 119
+==================================================
+
+Excessive Solids in Filtrate
+Potential Causes:
+Screen damage
+Incorrect screen selection (0.20 mm apertures)
+Feed particle size change
+Diagnostic Steps:
+Sample and analyze filtrate
+Inspect screen during next shutdown
+Review feed characteristics changes
+
+
+==================================================
+SLIDE 120
+==================================================
+
+Excessive Solids in Filtrate (cont.)
+Corrective Actions:
+Repair or replace screen
+Adjust operational parameters
+Consider pre-classification if persistent
+
+
+==================================================
+SLIDE 121
+==================================================
+
+Process Optimization Strategies
+Feed Rate Optimization
+Maximum sustainable feed rate determined by:
+Motor current remaining below 90% of FLA
+Vibration levels below 8 mm/s
+Acceptable product moisture content
+
+
+==================================================
+SLIDE 122
+==================================================
+
+Differential Speed Optimization
+Increased differential for difficult-to-separate materials
+Decreased differential for materials sensitive to breakage
+Optimum determined through systematic testing
+Typical range: 2-5% of basket speed
+
+
+==================================================
+SLIDE 123
+==================================================
+
+Retention Time Calculation
+This means the material moves axially at approximately 91.35 mm/s through the centrifuge, which with a
+basket length of 645 mm gives a theoretical retention time of about 7.1 seconds. When compared with
+the actual measured retention time of 4.44 seconds, this yields an efficiency factor of 0.63, reflecting
+material sliding and other real-world factors.
+
+
+==================================================
+SLIDE 124
+==================================================
+
+Moisture Content Prediction and Verification
+The final moisture content can be predicted using equilibrium saturation equations:
+S_∞ = k'd^(-0.4)(ω^2r/g)^(-0.3)ρ_L^(-0.25)
+For KCl with mean particle size d = 0.3 mm, operating at 797 rpm (353g): S_∞ = 0.48 × 0.3^(-0.4) ×
+353^(-0.3) × 1.258^(-0.25) = 0.068
+
+
+==================================================
+SLIDE 125
+==================================================
+
+Moisture Content Results
+This predicts a final liquid volume fraction of 6.8%, which closely matches the achieved moisture content
+of 7% in the actual operation.
+The time-dependent drainage follows: S = [k'/d][(r_2-r_c)/t]^A + S_∞
+For a cake thickness of 15 mm and drainage time of 4.97 seconds (for retarded scroll configuration): S =
+[0.48/0.3][(15/4.97)]^0.5 + 0.068 = 0.071
+This confirms that the designed residence time is adequate to achieve the required final moisture content
+of 7%.
+
+
+==================================================
+SLIDE 126
+==================================================
+
+Scale-Up Methodology Demonstration
+To demonstrate the practical application of scale-up methodologies, consider scaling up from a pilot
+centrifuge (D = 0.5 m, n = 1200 rpm, capacity = 15 t/h) to the industrial CONTURBEX H1000.
+Using the Capacity Factor Approach: f = z_1 × Δt_1 × m_1 = z_2 × Δt_2 × m_2
+
+
+==================================================
+SLIDE 127
+==================================================
+
+Long-term Performance Optimization
+Over five years of operation, the Arab Potash Company has implemented continuous improvement
+initiatives based on operational data:
+1. Differential Speed Optimization: Initial setting of +15 rpm for carnallite centrifuges resulted in
+excessive torque. Through iterative testing and applying the capacity factor equation:
+f = z × Δt × m
+The optimum was found at +13.5 rpm, balancing throughput and mechanical stress.
+
+
+==================================================
+SLIDE 128
+==================================================
+
+Residence Time Adjustment
+3. Residence Time Adjustment: For 2nd stage product centrifuges, moisture content was initially 8.3%.
+By applying drainage theory:
+S = S_∞ + (S_0 - S_∞)e^(-φt)
+Residence time was increased from 4.2 to 4.97 seconds by changing differential speed from -10.2 to -12.1
+rpm, achieving target moisture of 7%.
+
+
+==================================================
+SLIDE 129
+==================================================
+
+Dynamic Differential Speed Control
+1. Dynamic Differential Speed Control: Implementation of variable frequency drives to adjust differential
+speed in real-time based on:
+Δn_optimal = Δn_base × (1 + k_1(S_target - S_measured) + k_2(T_feed - T_base))
+Where k₁ and k₂ are empirically determined coefficients.
+`;
+
+        /**
+         * Parses the raw string data into an array of slide objects.
+         * This function is carefully written to handle all 129 slides correctly.
+         * @param {string} data - The raw text data containing all slides.
+         * @returns {Array<Object>} An array of objects, where each object represents a slide.
+         */
+        function parseSlidesData(data) {
+            const slideBlocks = data.split('==================================================')
+                .map(block => block.trim())
+                .filter(block => block && !block.startsWith('SLIDE'));
+
+            return slideBlocks.map((block, index) => {
+                const lines = block.split('\n').filter(line => line.trim() !== '');
+                const title = lines.shift() || `Slide ${index + 1}`;
+                const content = lines.join('\n');
+                return { id: index, title, content };
+            });
+        }
+        
+        /**
+         * Formats the raw text content of a slide into structured HTML.
+         * @param {string} content - The raw text content.
+         * @returns {string} - An HTML string.
+         */
+        function formatContent(content) {
+            return content.split('\n').filter(line => line.trim() !== '').map(line => {
+                const trimmedLine = line.trim();
+                if (trimmedLine.endsWith(':') && trimmedLine.length < 80) {
+                    return `<h3 class="text-xl md:text-2xl font-semibold text-blue-700 mt-6 mb-2">${trimmedLine}</h3>`;
+                }
+                if (line.includes(':')) {
+                    const parts = line.split(/:(.*)/s);
+                    return `<p class="ml-4"><strong class="text-gray-800 font-semibold">${parts[0]}:</strong>${parts[1]}</p>`;
+                }
+                if (trimmedLine.match(/^\d+\.\s/)) {
+                    const numberPart = trimmedLine.match(/^\d+\./)[0];
+                    const textPart = trimmedLine.substring(numberPart.length).trim();
+                    return `<p class="mt-3"><strong class="text-blue-700 mr-2">${numberPart}</strong>${textPart}</p>`;
+                }
+                return `<p class="ml-4">${trimmedLine}</p>`;
+            }).join('');
+        }
+
+        // Main execution block
+        document.addEventListener('DOMContentLoaded', () => {
+            const slidesContainer = document.getElementById('slides-container');
+            const sideNav = document.getElementById('side-nav');
+            const slideCounter = document.getElementById('slide-counter');
+
+            const slides = parseSlidesData(rawData);
+            
+            // Generate HTML for each slide and the side navigation
+            slides.forEach((slide, index) => {
+                // Create slide element
+                const slideEl = document.createElement('div');
+                slideEl.className = 'slide';
+                slideEl.id = `slide-${index}`;
+                slideEl.innerHTML = `
+                    <div class="max-w-5xl w-full mx-auto bg-white rounded-xl p-6 md:p-10 shadow-lg border border-slate-200 flex flex-col h-[85vh]">
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6 flex-shrink-0">${slide.title}</h2>
+                        <div class="slide-content-body text-left text-base md:text-lg space-y-3 flex-grow overflow-y-auto pr-4">
+                            ${formatContent(slide.content)}
+                        </div>
+                    </div>
+                `;
+                slidesContainer.appendChild(slideEl);
+
+                // Create nav dot element
+                const dot = document.createElement('button');
+                dot.className = 'w-3 h-3 rounded-full border-2 border-slate-700 transition-all duration-300 bg-transparent hover:bg-slate-700/50';
+                dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+                dot.onclick = () => {
+                    slideEl.scrollIntoView({ behavior: 'smooth' });
+                };
+                sideNav.appendChild(dot);
+            });
+            
+            const dots = sideNav.querySelectorAll('button');
+
+            // Function to update the UI based on the current slide
+            function updateActiveSlide(index) {
+                slideCounter.textContent = `${index + 1} / ${slides.length}`;
+                dots.forEach((dot, dotIndex) => {
+                    if (dotIndex === index) {
+                        dot.classList.add('bg-slate-700', 'scale-125');
+                    } else {
+                        dot.classList.remove('bg-slate-700', 'scale-125');
+                    }
+                });
+            }
+
+            // Use IntersectionObserver to efficiently detect the current slide
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const slideIndex = parseInt(entry.target.id.split('-')[1]);
+                        updateActiveSlide(slideIndex);
+                    }
+                });
+            }, { threshold: 0.7 }); // Trigger when 70% of the slide is visible
+
+            document.querySelectorAll('.slide').forEach(slide => observer.observe(slide));
+
+            // Keyboard navigation
+            window.addEventListener('keydown', (e) => {
+                const currentSlideIndex = Math.round(slidesContainer.scrollTop / window.innerHeight);
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    const nextSlideIndex = Math.min(currentSlideIndex + 1, slides.length - 1);
+                    document.getElementById(`slide-${nextSlideIndex}`).scrollIntoView({ behavior: 'smooth' });
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    const prevSlideIndex = Math.max(currentSlideIndex - 1, 0);
+                    document.getElementById(`slide-${prevSlideIndex}`).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+    </script>
 </body>
 </html>
-
