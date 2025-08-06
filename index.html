@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centrifugation in Chemical Engineering</title>
+    <title>Chemical Engineering Presentation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Basic setup for the scroll-snap container */
@@ -35,6 +35,10 @@
             box-sizing: border-box;
             position: relative;
         }
+
+        .chapter-slide {
+             background-color: #e2e8f0; /* bg-slate-200 */
+        }
         
         /* Custom scrollbar for the content area within a slide */
         .slide-content-body::-webkit-scrollbar {
@@ -65,7 +69,7 @@
 
     <script>
         // The complete slide data is stored here.
-        const rawData = `
+        const chapter1Data = `
 ==================================================
 SLIDE 1
 ==================================================
@@ -1589,22 +1593,4126 @@ speed in real-time based on:
 Where k₁ and k₂ are empirically determined coefficients.
 `;
 
+        const chapter2Data = `
+==================================================
+SLIDE 1
+==================================================
+CSTR Draft Tube Reactor for Carnallite Formation
+Technical Presentation
+
+==================================================
+SLIDE 2
+==================================================
+Contents
+1. Introduction to CSTR Technology
+2. Draft Tube Reactor Design
+3. Carnallite Formation: Chemistry & Kinetics
+4. Process Flow & Mass Balance
+5. Design Calculations
+6. Operating Parameters & Control
+7. Process Optimization
+8. Conclusion
+
+==================================================
+SLIDE 3
+==================================================
+1. Introduction to CSTR Technology
+What is a CSTR?
+Continuously Stirred Tank Reactor
+Provides uniform mixing throughout the reactor volume
+Operates at steady-state with continuous inflow and outflow
+Ideal for liquid-phase reactions requiring intensive mixing
+Well-suited for crystallization processes
+
+==================================================
+SLIDE 4
+==================================================
+Key Characteristics:
+Uniform concentration and temperature profiles
+No spatial gradients in ideal operation
+Residence time distribution rather than fixed residence time
+Excellent heat and mass transfer properties
+
+==================================================
+SLIDE 5
+==================================================
+2. Draft Tube Reactor Design
+Draft Tube Configuration
+Cylindrical internal structure directing flow patterns
+Creates controlled circulation paths within the reactor
+Enhances mixing efficiency and reduces power consumption
+Provides optimal conditions for crystal formation and growth
+
+==================================================
+SLIDE 6
+==================================================
+Our System Specifications:
+Volume: 1670 m³
+Diameter: 14 m
+Height: 12 m
+Draft tube diameter: 5 m (approximate)
+Agitator type: Axial flow impeller
+Retention time: 60 minutes
+Operating temperature: 30°C
+Open to atmosphere operation
+
+==================================================
+SLIDE 7
+==================================================
+3. Carnallite Formation: Chemistry & Kinetics
+Main Reaction:
+KCl(aq) + MgCl2(aq) + 6H2O(l) → KCl·MgCl2·6H2O(s)
+Reaction Characteristics:
+Crystallization process driven by supersaturation
+Common ion effect from high chloride concentration
+Temperature-dependent solubility relationship
+Secondary reaction: NaCl crystallization
+Complex equilibrium involving multiple salts
+
+==================================================
+SLIDE 8
+==================================================
+Common Ion Effect:
+High Cl- concentration reduces solubility of all chloride salts
+Drives crystallization of both carnallite and NaCl
+Mathematical representation: Ksp = [K+][Mg2+][Cl-]^3[H2O]^6
+
+==================================================
+SLIDE 9
+==================================================
+4. Process Flow & Mass Balance
+Input Streams:
+Stream 1:
+Flow rate: 1440.8 T/H
+Density: 1.350 t/m³
+Brine composition (KCl, NaCl, MgCl₂, H₂O)
+Stream 2:
+Flow rate: 106.1 T/H
+Density: 1.258 t/m³
+Brine composition (KCl, NaCl, MgCl₂, H₂O)
+
+==================================================
+SLIDE 10
+==================================================
+Output Streams:
+Liquid phase (1530.6 T/H):
+KCl: 49.36 T/H
+NaCl: 38.65 T/H
+MgCl₂: 394.13 T/H
+H₂O: 1048.46 T/H
+Density: 1.346 t/m³
+Solid phase (266.4 T/H):
+Carnallite (KCl·MgCl₂·6H₂O): 216.6 T/H
+NaCl: 49.8 T/H
+Net Production:
+Carnallite formation: 14.7 T/H
+NaCl formation: 1.6 T/H
+
+==================================================
+SLIDE 11
+==================================================
+5. Design Calculations
+Reactor Volume Calculation:
+V = Q × τ
+Where:
+V = Reactor volume (m³)
+Q = Volumetric flow rate (m³/h)
+τ = Residence time (h)
+Sample Calculation:
+Total mass flow rate = 1546.9 T/H
+Average density = 1.35 t/m³
+Volumetric flow rate (Q) = 1546.9 ÷ 1.35 = 1146 m³/h
+Residence time (τ) = 1 h
+Required volume = 1146 × 1 = 1146 m³
+Note: Actual reactor volume (1670 m³) includes safety factor and headspace
+
+==================================================
+SLIDE 12
+==================================================
+Power Requirement for Agitation:
+P = Np × ρ × N^3 × Di^5
+Where:
+P = Power (W)
+Np = Power number (dimensionless, depends on impeller type)
+ρ = Fluid density (kg/m³)
+N = Rotational speed (rev/s)
+Di = Impeller diameter (m)
+Sample Calculation:
+Np = 3.5 (for axial flow impeller)
+ρ = 1350 kg/m³
+N = 0.5 rev/s (30 rpm)
+Di = 4 m
+P = 3.5 × 1350 × (0.5)³ × (4)⁵ = 3.5 × 1350 × 0.125 × 1024 = 606,060 W ≈ 606 kW
+
+==================================================
+SLIDE 13
+==================================================
+6. Operating Parameters & Control
+Critical Process Parameters:
+Temperature: 30°C (±1°C)
+Agitation speed: 20-35 rpm
+Retention time: 60 minutes
+Feed composition ratio (Stream 1:2)
+Solid content in slurry: 15-20%
+
+==================================================
+SLIDE 14
+==================================================
+Control Strategy:
+Temperature control: Heat exchanger with feedback control
+Level control: Overflow and variable speed outflow pump
+Composition control: Feed stream ratio adjustment
+Crystal size control: Seed addition and agitation speed
+Retention time control: Feed rate adjustment
+
+==================================================
+SLIDE 15
+==================================================
+7. Process Optimization
+Performance Metrics:
+Carnallite yield (%)
+Crystal size distribution
+Energy consumption per ton of product
+Product purity
+Optimization Strategies:
+Fine-tuning of feed composition
+Optimizing temperature profile
+Adjusting agitation pattern and intensity
+Seed crystal management
+Controlled crystallization kinetics
+
+==================================================
+SLIDE 16
+==================================================
+Crystallization Kinetics Calculation:
+G = kg(c - c*)^n
+Where:
+G = Crystal growth rate (m/s)
+kg = Growth rate constant (m/s/(kg/m³)^n)
+c = Solution concentration (kg/m³)
+c* = Equilibrium concentration (kg/m³)
+n = Order of growth rate law (typically 1-2)
+Sample Calculation:
+kg = 5 × 10^-8 m/s/(kg/m³)²
+c = 450 kg/m³ (total dissolved salts)
+c* = 420 kg/m³ (saturation point)
+n = 2 (assumed)
+G = 5 × 10^-8 × (450 - 420)² = 5 × 10^-8 × 900 = 4.5 × 10^-5 m/s
+
+==================================================
+SLIDE 17
+==================================================
+8. Conclusion
+Draft tube CSTR provides optimal conditions for carnallite crystallization
+Process design balances chemical, mechanical, and thermal factors
+Key control parameters identified for stable operation
+Optimization strategies can improve yield and product quality
+Scalable design suitable for industrial implementation
+`;
+        const chapter3Data = `
+==================================================
+SLIDE 1
+==================================================
+DRYING EQUIPMENT
+Introduction to Drying
+Definition of Drying
+Drying is the thermal process through which liquid is separated from a solid-liquid mixture by
+application of heat
+Also accomplished by accelerating evaporation through vacuum
+Involves transfer of liquid from a surface into an unsaturated vapor phase
+
+==================================================
+SLIDE 2
+==================================================
+Drying vs. Evaporation
+Distinguished by relative quantities of liquid removed from solid
+Evaporation: Product is concentrated solution, suspension, or wet slurry
+Drying: Dry solid is the final product
+
+==================================================
+SLIDE 3
+==================================================
+Evaporation Factors
+Rate of evaporation depends upon:
+Nature of the liquid to be evaporated
+Amount of heat applied
+Nature of air saturation
+Surface area of the solid or solid mixture
+
+==================================================
+SLIDE 4
+==================================================
+Importance of Drying
+Stability
+Dried products are more stable than moist ones
+Deterioration can be avoided (e.g., effervescent salts, penicillin)
+Inhibits microbial growth & chemical decomposition
+
+==================================================
+SLIDE 5
+==================================================
+Preparation of Bulk Drugs
+Often used as final stage of processing
+Example: Preparation of dried aluminum hydroxide
+
+==================================================
+SLIDE 6
+==================================================
+Preparation of Granules
+Common unit process in pharmaceutical manufacturing
+Used in preparing granules for tablets or capsules
+Essential for maintaining appropriate properties
+
+==================================================
+SLIDE 7
+==================================================
+Flow Property of Powder
+Flow properties highly dependent on moisture content
+Viscous & sticky materials are not free flowing
+Essential for tablet and capsule manufacturing
+Improves fluidity & compression characteristics
+
+==================================================
+SLIDE 8
+==================================================
+Improved Handling
+Reduces bulk & weight
+Lowers transportation costs
+Facilitates storage
+
+==================================================
+SLIDE 9
+==================================================
+Sterilization
+Important for sterilization of pharmaceutical equipment and glass wares
+
+==================================================
+SLIDE 10
+==================================================
+Fundamentals of Drying
+Relative Humidity
+Amount of water vapor in air is usually less than required for saturation
+Relative Humidity (RH) = (Actual vapor density / Saturation vapor density) × 100
+Approximately equal to percent saturation
+Dependent on both moisture amount and temperature
+
+==================================================
+SLIDE 11
+==================================================
+Loss on Drying (LOD)
+Water content calculated as percentage of weight of wet solid
+LOD = (Weight of water in sample / Total weight of wet sample) × 100
+
+==================================================
+SLIDE 12
+==================================================
+Bound and Unbound Moisture
+Bound Moisture: Minimum water held by material that exerts equilibrium vapor pressure less than
+pure water at same temperature
+Unbound Moisture: Water held by material that exerts equilibrium vapor pressure equal to pure
+water at same temperature
+
+==================================================
+SLIDE 13
+==================================================
+Equilibrium Moisture Content (EMC)
+Amount of water in solid that exerts vapor pressure equal to vapor pressure of surrounding
+atmosphere
+At EMC, materials neither lose nor gain moisture
+
+==================================================
+SLIDE 14
+==================================================
+Importance of EMC
+Helps select proper drying conditions
+Helps select proper storage conditions
+
+==================================================
+SLIDE 15
+==================================================
+Factors Affecting EMC
+Temperature of surrounding air (inversely proportional to EMC)
+Relative humidity (directly proportional to EMC)
+Nature of solid: o For non-porous, non-hygroscopic materials, EMC is essentially zero o For colloidal
+or fibrous materials, EMC is higher
+
+==================================================
+SLIDE 16
+==================================================
+Mechanisms of Drying
+Basic Phenomena
+Drying process involves two basic phenomena:
+Heat transfer
+Mass transfer
+
+==================================================
+SLIDE 17
+==================================================
+Heat Transfer
+Heat must be transferred to material to supply latent heat for moisture vaporization
+Heating source: flame, steam, hot gas, hot air, etc.
+
+==================================================
+SLIDE 18
+==================================================
+Heat Transfer Mechanisms
+Heat may be transferred in three ways:
+1. Conduction
+2. Convection
+3. Radiation
+
+==================================================
+SLIDE 19
+==================================================
+Heat Transfer by Conduction
+Transfer of heat between substances in direct contact
+Indirect process
+Advantages: o Simple method o Cheap and rapid drying process o Wet material not in direct contact
+with heat
+Drawbacks: o Uneven heat distribution o Requires stirring during drying o Compact materials need
+preliminary granulation
+
+==================================================
+SLIDE 20
+==================================================
+Heat Transfer by Convection
+Heat from source directly applied to solid-liquid mixture through media
+Media may be hot air or hot gas
+Advantages: o Simple method o More uniform heat distribution o Prompt drying o Easier heat
+control
+Drawbacks: o Requires temperature fixing o Product loss may occur with stirring
+
+==================================================
+SLIDE 21
+==================================================
+Heat Transfer by Radiation
+Heating using radiant energy as source
+Usually infrared radiation
+Advantages: o Unique process with short drying period o Easy to stop heating source
+Drawbacks: o Expensive o Requires stirring for even drying o Worker safety concerns
+
+==================================================
+SLIDE 22
+==================================================
+Drying by Mass Transfer
+When heat is applied, water is removed as vapor
+Involves diffusion of water from interior to evaporating surface
+Subsequent evaporation from surface to passing air stream
+
+==================================================
+SLIDE 23
+==================================================
+Mass Transfer Mechanisms
+Mass transfer occurs by two primary mechanisms:
+1. Internal mechanisms
+2. External mechanisms
+
+==================================================
+SLIDE 24
+==================================================
+Internal Mechanisms
+1. Diffusion o Transfer of water through material to evaporating surface o Transfer of vapor to passing
+air stream
+2. Flow from Shrinkage & Pressure Gradients o When water is removed, pores empty o Solid particles
+occupy empty space causing shrinkage o Pressure on squeezed surface creates cracks o Enhances
+drying rate
+
+==================================================
+SLIDE 25
+==================================================
+Internal Mechanisms (continued)
+3. Gravity o Moisture gravitationally pulled downward o Accumulates beneath lower surface o Water
+moves through inner capillaries
+4. Vaporization-Condensation Sequence o Surface water vaporizes but can't escape rigid surface o
+Trapped moisture condenses in less heated areas o Repeated vaporization-condensation until vapor
+escapes
+
+==================================================
+SLIDE 26
+==================================================
+Internal Mechanisms (continued)
+5. Capillary Flow o Moisture expelled through intermolecular spaces o Driven by surface tension and
+capillary action
+
+==================================================
+SLIDE 27
+==================================================
+External Mechanisms
+1. Temperature o Drying rate directly proportional to temperature o Higher temperature enables rapid
+drying o Excess heat may affect product stability
+2. Humidity o Drying rate inversely proportional to surrounding humidity o Saturated areas impede
+drying even at high temperatures o Lower humidity enhances drying
+
+==================================================
+SLIDE 28
+==================================================
+External Mechanisms (continued)
+3. Agitation o Enhances evaporation by exposing new surface areas o Ensures uniform heat distribution
+o Prevents partial burning or wetting
+4. Method of Supporting the Solid o Different dryers support materials differently o Metallic tray
+preferable for better heat transfer o Relative drying capacity: Dilute bed > Fluidized bed > Moving
+bed > Static bed
+
+==================================================
+SLIDE 29
+==================================================
+External Mechanisms (continued)
+5. State of Subdivision o Finer particles have larger surface area exposure o Enhances drying rate
+6. Nature of the Particle o Porous particles dry easier o Fibrous materials take longer
+
+==================================================
+SLIDE 30
+==================================================
+External Mechanisms (continued)
+7. Vacuum o Efficient for thermolabile substances o Allows drying at lower temperatures
+8. Other Factors o Contact between hot surface and wet solid o Bulk of material o Drying period o
+Heating time
+
+==================================================
+SLIDE 31
+==================================================
+Classification of Dryers
+General Classification
+Dryers can be classified based on:
+Pressure in dryer
+Method of operation
+Method of heat supply
+Type of drying medium
+Direction of heat and material flow
+Mode of drying medium flow
+Method of moisture entrainment
+Form of wet material
+
+==================================================
+SLIDE 32
+==================================================
+Main Classification
+Based on operation and methods of heat transfer:
+Direct dryers (continuous and batch)
+Indirect dryers
+Infrared dryers
+Dielectric dryers
+
+==================================================
+SLIDE 33
+==================================================
+Direct vs. Indirect Dryers
+Direct Dryers:
+Heat transfer by direct contact between wet solid and hot gases
+Vaporized liquid carried away by drying medium
+Also called convection dryers Indirect Dryers:
+Heat transferred through retaining wall
+Vaporized liquid removed independently of heating medium
+Drying rate depends on contact with hot surfaces
+Also called conduction or contact dryers
+
+==================================================
+SLIDE 34
+==================================================
+Infrared Dryers
+Also known as radiant-heat dryers
+Used for drying thin coatings, films, and webs
+Airborne dust, water moisture, and carbon dioxide enhance radiation
+Applications: motor industry, food industry, pulp and paper industry
+
+==================================================
+SLIDE 35
+==================================================
+Dielectric Dryers
+Process of heating poor electrical conductors using high-frequency currents
+Heat developed within material rather than from outside
+More uniform heating throughout
+Expensive technique
+Industrial application: Drying massive geometrical objects (e.g., ceramic monoliths)
+
+==================================================
+SLIDE 36
+==================================================
+Continuous Direct Dryers
+Types of Continuous Direct Dryers
+Spray dryers
+Rotary dryers
+Tunnel dryers
+
+==================================================
+SLIDE 37
+==================================================
+Spray Dryers - Introduction
+Evaporation of moisture from atomized feed
+Mixing spray with drying medium (typically air)
+Sprays produced by rotary (wheel) or nozzle atomizers
+Drying continues until desired moisture content is reached
+Product separated from air using cyclone or bag filter
+Can process solvents, emulsions, suspensions, or dispersions
+
+==================================================
+SLIDE 38
+==================================================
+Spray Dryer Components
+1. Two-fluid nozzle operated by compressed air (atomizer)
+2. Electric heating of drying medium
+3. Spray cylinder/drying chamber
+4. Cyclone for particle separation
+5. Outlet filter for fine particles
+6. Aspirator for generating flow
+
+==================================================
+SLIDE 39
+==================================================
+Flow Considerations in Spray Dryers
+Co-current Flow:
+Material sprayed in same direction as hot air
+Droplets contact hot air when moistest
+Product treated gently due to sudden vaporization Counter-current Flow:
+Material sprayed opposite to hot air flow
+Hot air flows upward while product falls through increasingly hot air
+Eliminates residual moisture but product becomes very hot Combined Flow:
+Product sprayed upward, remains briefly in hot zone
+Gravity pulls product into cooler zone
+Gentler treatment due to short time in hot zone
+
+==================================================
+SLIDE 40
+==================================================
+Atomizers in Spray Dryers
+Atomization breaks continuous liquid phase into discrete droplets
+Greatly influences final powder structure and quality
+Critical component in spray drying process
+
+==================================================
+SLIDE 41
+==================================================
+Types of Atomizers
+1. Centrifugal atomization
+2. Single fluid nozzle
+3. Two-fluid nozzle
+
+==================================================
+SLIDE 42
+==================================================
+Centrifugal Atomizers
+Feed pumped to spinning disc
+Feed sent to center and spread between two plates
+Accelerated to high velocity
+Functions as nozzle to increase fluid velocity
+Used for non-homogeneous materials (food industry)
+Handles large production rates (up to 60,000 lb/hr)
+
+==================================================
+SLIDE 43
+==================================================
+Single Fluid Nozzle (Pressure Nozzle)
+Creates spray by forcing fluid through orifice
+Spraying pressure depends on feed characteristics and desired particle size
+Ranges from 300-3,000 psig
+Most energy efficient atomization method
+
+==================================================
+SLIDE 44
+==================================================
+Two-Fluid Nozzle (Pneumatic Nozzle)
+Creates spray by contacting feed and compressed gas
+Atomization energy from compressed gas (usually air)
+Contact may be internal or external to nozzle
+Least energy efficient but produces finest particles (10-30 micron)
+Works with any spray dryer feed pump
+Limited control of spray angle
+
+==================================================
+SLIDE 45
+==================================================
+Advantages of Spray Dryers (1)
+Particle Size Control: Easily controlled through atomization and hot gas inlet design
+Ease of Downstream Operations: Spherical particles provide fluid-like flow properties
+
+==================================================
+SLIDE 46
+==================================================
+Advantages of Spray Dryers (2)
+Suitable for Heat Sensitive Products: Protective vapor envelope keeps particles at saturation
+temperature
+Short Residence Time: 3-40 seconds prevents thermal degradation
+
+==================================================
+SLIDE 47
+==================================================
+Advantages of Spray Dryers (3)
+Reduced Corrosion Potential: Gas-suspended process keeps chamber dry
+Homogeneous Dried Products: Each particle has same chemical composition as mixed feed
+
+==================================================
+SLIDE 48
+==================================================
+Applications of Spray Dryers
+Most successful for solutions, slurries, and pastes that:
+Cannot be dewatered mechanically
+Are heat sensitive and cannot withstand high temperatures for long periods
+Contain ultrafine particles that would agglomerate if dried in concentrated form Widely used for:
+Dairy products (milk powder)
+Detergents
+
+==================================================
+SLIDE 49
+==================================================
+Rotary Dryers - Introduction
+Cylinder inclined slightly to horizontal
+May rotate or have stationary shell with revolving agitator
+Wet material fed at upper end
+Rotation/agitation advances material to lower end for discharge
+
+==================================================
+SLIDE 50
+==================================================
+Components of Rotary Dryers
+Rotating cylinder
+Feeding mechanism
+Drive system
+Support rollers
+Discharge mechanism
+Flight design for material lifting
+
+==================================================
+SLIDE 51
+==================================================
+Classification of Rotary Dryers
+1. Direct Rotary Dryers: o Heat transfer by direct exchange between gas and solids
+2. Indirect Rotary Dryers: o Heating medium separated from solids by metal wall/tube
+3. Indirect-Direct Rotary Dryers: o Combination of both types o Hot gases heat inner shell then pass
+between shells in contact with wet solids
+
+==================================================
+SLIDE 52
+==================================================
+Specific Types of Direct Rotary Dryers
+1. Direct Rotary Dryer/Cooler: o Bare metal cylinder with/without flights o Suitable for low/medium
+temperature operations o Limited by metal strength characteristics
+2. Direct Rotary Kiln: o Metal cylinder lined with insulating block/refractory brick o Suitable for high-
+temperature operations
+3. Direct Roto-Louvre Dryer: o Provides true through-circulation of gas through solids bed o Suitable for
+low/medium temperature operation
+
+==================================================
+SLIDE 53
+==================================================
+Flights in Rotary Dryers
+Purpose: Lifting and showering solids through gas stream
+Usually offset every 0.6-2m for uniform curtains of solids
+Shape depends on material handling characteristics
+Various designs: helical, angled, etc.
+
+==================================================
+SLIDE 54
+==================================================
+Flight Arrangements
+Internal elements/partitions may be used in large cross-section dryers
+Increases material distribution effectiveness
+Reduces dusting and impact grinding
+Various common arrangements exist
+
+==================================================
+SLIDE 55
+==================================================
+Advantages of Rotary Dryers
+Low operating costs
+Low maintenance costs
+High-volume processing capability
+High thermal efficiency
+Flexible and durable construction
+Less sensitive to throughput and product size fluctuations
+Handles wide variations in feed characteristics
+
+==================================================
+SLIDE 56
+==================================================
+Tunnel Dryers
+Long chamber holding trucks that travel in one direction
+Fresh truck pushed in at one end as processed truck exits other end
+Movement by hand or machinery
+
+==================================================
+SLIDE 57
+==================================================
+Applications of Tunnel Dryers
+Drying paraffin wax, gelatin, soap, pottery ware
+Drying and baking enameled pieces
+Drying refractory shapes
+Used in continuous production systems
+
+==================================================
+SLIDE 58
+==================================================
+Batch/Continuous Direct Dryers
+Overview
+Direct dryers operating in batch or continuous mode
+Similar working principles but different operation cycles
+Examples: Fluid bed and through circulation dryers
+
+==================================================
+SLIDE 59
+==================================================
+Fluid Bed Dryers
+Working Principle:
+Wet solid fluidized by heated air or hot gas
+Rapid mixing and heat transfer
+Feed admitted at top; dry product removed from bottom
+
+==================================================
+SLIDE 60
+==================================================
+Fluid Bed Dryer Components
+Air inlet and distribution system
+Bed chamber
+Cyclone separator
+Filter system
+Exhaust fan
+
+==================================================
+SLIDE 61
+==================================================
+Advantages of Fluid Bed Dryers
+Close control of drying conditions
+Can retain predetermined amount of moisture to prevent dusting
+Functions as simultaneous dryer and classifier
+Efficient heat transfer due to large particle surface area exposure
+
+==================================================
+SLIDE 62
+==================================================
+Through Circulation Dryers
+Working Principle:
+Layer of wet solid (25-150mm thick) carried on traveling metal screen
+Passes through long drying chamber/tunnel
+Chamber divided into sections with separate fan and heater
+Controlled drying environment
+
+==================================================
+SLIDE 63
+==================================================
+Through Circulation Dryer Operation
+At inlet: Air passes upward through screen and solids
+At discharge: Air passes downward (prevents dust issues)
+Efficient for properly sized materials
+
+==================================================
+SLIDE 64
+==================================================
+'Preforming' Process
+Required when particles are too small for through circulation
+Converts wet solid into suitable form for air circulation
+Methods include granulation and extrusion
+Increases drying efficiency by allowing proper air flow
+
+==================================================
+SLIDE 65
+==================================================
+Batch Direct Dryers
+Tray Dryers - Structure
+Rectangular metal chamber containing trucks supporting racks
+Each rack carries shallow trays (approx. 750mm square, 50-150mm deep)
+Trays loaded with material to be dried
+
+==================================================
+SLIDE 66
+==================================================
+Tray Dryers - Operation
+Heated air circulated at 2-5 m/s between trays
+Fan and motor provide circulation
+Air passes over heaters
+Baffles distribute air uniformly over tray stack
+Some moist air vented; makeup air enters through inlet
+
+==================================================
+SLIDE 67
+==================================================
+Tray Dryer - Material Handling
+Racks mounted on truck wheels
+After drying cycle, trucks pulled out for tray dumping
+Batch operation with manual loading/unloading
+
+==================================================
+SLIDE 68
+==================================================
+Tray Dryers - Advantages vs. Disadvantages
+Advantages:
+Practical for small production rates
+Can dry almost anything
+Energy efficient for certain applications Disadvantages:
+Labor-intensive (loading/unloading)
+Slow drying process
+Long drying cycles (3-48 hours per batch)
+
+==================================================
+SLIDE 69
+==================================================
+Continuous Indirect Dryers
+Steam Tube Rotary Dryers
+Rotating cylinder with concentric rows of steam tubes
+Tubes carry condensing steam and rotate with cylinder
+Wet solids fed through chute or screw conveyor
+Steam enters through revolving inlet manifold
+Tubes provide gentle solids-lifting action
+
+==================================================
+SLIDE 70
+==================================================
+Steam Tube Dryer Operation
+Heat transfer from hot tubes evaporates moisture
+Dried product discharges from opposite end
+Condensate collected in collection ring
+Suitable for materials that are: o Free-flowing, granular, crystalline, or flaked o Wet with water or
+organic solvents o Sensitive to breakage, dust formation, or contamination
+
+==================================================
+SLIDE 71
+==================================================
+Screw Conveyor Dryers
+Trough or cylinder containing hollow steam-heated screw
+Conveys material while providing heat for drying
+Applications include solvent removal and drying of fine/sticky materials
+
+==================================================
+SLIDE 72
+==================================================
+Drum Dryers
+Two classifications based on material handling:
+1. Material remains on drum until scraped off
+2. Material transfers between drums
+
+==================================================
+SLIDE 73
+==================================================
+Drum Dryer Types
+1. Single Drum: o Most common with "dip" feed o Thick film applied to heated drum rotating on
+horizontal axis
+2. Double Drum: o Employs "nip" feed device o Adjustable space between drums controls film thickness
+
+==================================================
+SLIDE 74
+==================================================
+Drum Dryer Applications
+Widely used in food industry for liquids
+Not suitable for: o Materials that don't adhere to drum o Thermoplastic materials that melt and stick
+
+==================================================
+SLIDE 75
+==================================================
+Batch Indirect Dryers
+Vacuum Rotary Dryers
+Heated vacuum chamber rotating horizontally
+Wet material loaded through charge opening
+Chamber closed and evacuated to desired pressure
+Heat supplied by surrounding jacket
+Rotation imparts tumbling motion for better heat transfer and mixing
+
+==================================================
+SLIDE 76
+==================================================
+Vacuum Rotary Dryer Applications
+Widely used for free-flowing powders, granules, and crystals
+Suitable for heat-sensitive materials
+Not appropriate for sticky materials (adheres to walls or forms lumps)
+
+==================================================
+SLIDE 77
+==================================================
+Agitated Pan Dryers
+Heated vessel with slow-moving vertical agitator
+Wet materials fed through hinged top cover
+Four-bladed paddle agitates contents and sweeps vessel sides/bottom
+Assists in emptying by moving product toward discharge door
+
+==================================================
+SLIDE 78
+==================================================
+Agitated Pan Dryer Applications
+Used for drying pastes and slurries on small scale
+Provides efficient mixing during drying
+Good for materials requiring gentle agitation
+
+==================================================
+SLIDE 79
+==================================================
+Vacuum Tray Dryers
+Cylindrical or rectangular vacuum chamber with heated shelves
+Trays of wet material placed on shelves and dried in batches
+Moisture removed by vacuum pump and condenser
+Used for heat-sensitive or easily oxidized materials
+Labor-intensive for loading/unloading
+
+==================================================
+SLIDE 80
+==================================================
+Freeze Dryers
+Moisture first frozen then sublimed by heating
+Heat provided by conduction, convection, and/or radiation
+Low-temperature operation suitable for heat-sensitive materials
+Widely used for biologicals, pharmaceuticals, and foodstuffs
+Example: Freeze-dried coffee with good color/aroma retention
+
+==================================================
+SLIDE 81
+==================================================
+Rotary Dryers - Detailed Analysis
+Rotary Dryer Definition
+Handles material by direct contact with heated gas
+Large rotating cylindrical tube
+Slopes slightly for gravity-assisted material transport
+Discharge end lower than feed end
+
+==================================================
+SLIDE 82
+==================================================
+Applications of Rotary Dryers
+Dries various moisture-containing materials: o Coal and coal slurry o Slag o Industrial waste o Clay
+stone
+Widely used in: o Building materials o Metallurgy o Chemical industry
+
+==================================================
+SLIDE 83
+==================================================
+Working Principle
+Wet materials transported to hopper by conveyor
+Fed into dryer through feeding pipe
+Cylinder rotates with slight incline
+Materials move toward lower end by gravity
+Heat carrier (hot air/gas) transfers heat directly or indirectly
+
+==================================================
+SLIDE 84
+==================================================
+Internal Operation
+Cylinder rotation moves materials forward
+Shoveling plates inside cylinder: o Lift materials and cast out o Increase contact surface o Promote
+drying efficiency o Accelerate forward movement
+Heat carrier typically hot air or flue gas
+
+==================================================
+SLIDE 85
+==================================================
+Dust Collection
+Materials mingled with air collected in cyclone dust collector
+For reduced dust content, additional treatment required: o Bag dust collector o Wet dust collector
+Environmental considerations important in design
+
+==================================================
+SLIDE 86
+==================================================
+Advantages of Rotary Dryers
+Better outer layer drying
+Good material handling with minimal attrition
+Uniform material drying through good mixing
+High thermal efficiency
+Continuous operation
+Easy installation
+Low electrical power requirements
+
+==================================================
+SLIDE 87
+==================================================
+Disadvantages of Rotary Dryers
+Potential size reduction from erosion/breakdown
+Inconsistent dried product characteristics
+Lower energy efficiency compared to some alternatives
+Difficult to maintain
+Challenges with dust separation
+
+==================================================
+SLIDE 88
+==================================================
+Theory of Rotary Drying
+Wet solids fed into elevated end, discharged at lower end
+Hot gases contact solids, evaporating surface moisture
+Both co-current and counter-current operation possible
+Heat and mass transfer occur simultaneously
+
+==================================================
+SLIDE 89
+==================================================
+Rotary Dryer Zones and Calculation Methods
+Rotary Dryer Zones
+A rotary dryer operating with granular, non-porous solids with unbound surface moisture can be divided 
+into three zones:
+1. Solids heated to wet-bulb temperature without moisture loss
+2. Solids lose moisture while remaining at wet-bulb temperature
+3. Solids temperature rises without further moisture loss
+
+==================================================
+SLIDE 90
+==================================================
+Temperature and Moisture Profiles
+Counter-current & co-current profiles shown
+Assumes constant air & solids properties
+Uses concept of Number of Transfer Units (NTU)
+
+==================================================
+SLIDE 91
+==================================================
+Zone Characteristics
+Zone I:
+Solids heated to wet-bulb temperature of air
+No moisture loss occurs
+Sensible heat transfer from air to solids Zone II:
+Solids remain at wet-bulb temperature
+Moisture evaporates from surface
+Latent heat transfer from air to evaporate water
+
+==================================================
+SLIDE 92
+==================================================
+Zone III and Overall Process
+Zone III:
+Solids temperature rises
+No further moisture loss
+Final heating of dried product Process Integration:
+Zones may overlap in actual operation
+Relative lengths depend on material properties and operating conditions
+
+==================================================
+SLIDE 93
+==================================================
+Psychrometric Considerations
+Importance of humidity in drying process
+Drying relies on air's ability to absorb moisture
+Air humidity impacts: o Drying rate o Energy efficiency o Product quality
+Need to track air humidity changes throughout dryer
+
+==================================================
+SLIDE 94
+==================================================
+Key Psychrometric Parameters
+Dry bulb temperature (T)
+Wet bulb temperature (Tw)
+Dew point (Td)
+Absolute humidity (W)
+Relative humidity (RH)
+Enthalpy (H)
+
+==================================================
+SLIDE 95
+==================================================
+Number of Transfer Units (NTU)
+Non-dimensional heat transfer parameter
+Ratio of overall thermal capacity to maximum possible
+NTU = UaV/GCG = UaπD²Z/4GCG = Z/LT
+Higher NTU means closer approach to equilibrium
+Typical design range: 1.5-2.5 NTU
+
+==================================================
+SLIDE 96
+==================================================
+Calculation Method - Inputs
+Required Parameters:
+Dryer dimensions (D, Z)
+Air flow rate (G), inlet temperature (T2)
+Solids flow rate (L), inlet moisture (X1), outlet moisture (X2)
+Ambient air temperature (T3), humidity (RH3) Output Parameters:
+Outlet temperature (T1)
+Drying efficiency
+Energy consumption
+
+==================================================
+SLIDE 97
+==================================================
+Calculation Steps
+1. Calculate psychrometric properties at inlet conditions
+2. Determine heat and mass transfer coefficients
+3. Calculate NTU based on dryer dimensions and operating parameters
+4. Determine zone lengths and temperature profiles
+5. Calculate outlet conditions and verify performance
+
+==================================================
+SLIDE 98
+==================================================
+Modified Calculation Algorithm
+Methodology for calculating outlet temperature (modified from Pacheco & Queiroz):
+1. Input Parameters: • Dryer geometry (D, Z) • Air conditions (G, T2, RH) • Solids properties (Cs, Xi, Xo,
+Tsi)
+2. Outer Loop - Iteration for Product Flow Rate: • Guess initial L (product flow rate) • Calculate water
+balance: W1 = W2 + (Xi-Xo)*(L/G)
+3. Inner Loop - Outlet Temperature: • Use exponential drying relation to predict temperature drop • NT
+= ln((T2-Ts)/(T1-Ts)) • For each zone: calculate heat transfer • Apply energy balance: L C s(Tso-Tsi) =
+G C g(T2-T1)
+4. Validation: • Compare calculated L with guessed L • If different, adjust and repeat from step 2 • If
+same, solution found
+Key Parameters:
+CG: Air specific heat (kJ/kg°C)
+CS: Solids specific heat (kJ/kg°C)
+Ua: Volumetric heat transfer coefficient = K G s ^ 0 . 6 7D^-0.37
+LT: Length of Transfer Unit = CG*Gs/Ua
+
+==================================================
+SLIDE 99
+==================================================
+Advanced Considerations
+Effect of flight design on performance
+Residence time distribution
+Holdup and loading calculations
+Scale-up considerations
+Optimization for energy efficiency
+
+==================================================
+SLIDE 100
+==================================================
+Summary and Conclusions
+Drying fundamentals and mechanisms are critical to understanding performance
+Proper dryer selection depends on material characteristics and process requirements
+Rotary dryers offer versatility for many industrial applications
+Calculation methods based on heat/mass transfer and psychrometrics provide reliable design
+approach
+Optimization requires balancing energy efficiency, product quality, and capital costs
+
+==================================================
+SLIDE 101
+==================================================
+CASE STUDY: INDUSTRIAL POTASH DRYER SYSTEM
+Introduction to the Case Study
+Overview
+Industrial dryer system for potash (KCl) processing
+Direct rotary dryer technology
+System designed with normal operation and maximum design capacities
+Located outdoors in dusty environment with high potash salt content
+
+==================================================
+SLIDE 102
+==================================================
+System Purpose
+Drying of potash (KCl) and salt (NaCl) mixture
+Processing wet cake with brine into dry product
+Reducing moisture content while maintaining product quality
+Continuous high-capacity operation
+
+==================================================
+SLIDE 103
+==================================================
+System Specifications
+Key System Components
+Direct rotary dryer
+Furnace system with No. 6 fuel oil
+Feed handling system
+Exhaust gas treatment
+Product collection system
+Cooling water circuit
+
+==================================================
+SLIDE 104
+==================================================
+Capacity Parameters
+Normal Operation: o Feed rate: 56.00 metric tph (total cake) o Product rate: 53.33 metric tph
+Maximum Design: o Feed rate: 75.38 metric tph (total cake) o Product rate: 69.53 metric tph
+System sized for approximately 25% operational buffer
+
+==================================================
+SLIDE 105
+==================================================
+Feed Characteristics
+Feed Composition
+Solids Component (metric tph):
+Normal    Max. Design
+KCl: 50.52 65.78
+NaCl: 1.55 2.85
+Total solids: 52.07 68.63
+Brine Component (metric tph):
+Normal    Max. Design
+KCl: 0.06 0.10
+NaCl: 0.04 0.07
+MgCl₂ (Trace of MgBr₂ & CaCl₂): 0.39 0.66
+H₂O: 3.44 5.92
+Total: 3.93 6.75
+Total Cake (metric tph): 56.00 75.38
+
+==================================================
+SLIDE 106
+==================================================
+Temperatures and Particle Size Distribution
+Temperatures, °C:
+Normal    Max. Design
+Feed Cake: 26 15
+Dryer Supply Air: o Ambient Temperature: -- 5 o Cooler Exhaust Temp: 116 (Not used)
+Furnace Discharge: 980 980
+Feed Chute Cooling Water: 35 35
+Particle Size Distribution:
+Screen size, mm:     0.8    0.6    0.5    0.31   0.21
+% Cumulative On:     0.3     2      6      50     80
+Dust from the existing operations is 11% plus 0.21mm and 50% less than 0.1mm
+
+==================================================
+SLIDE 107
+==================================================
+Operating Conditions
+Dryer Duty and Feed Specifications
+Dryer Duty:
+Normal    Max. Design
+Heat to process, kg-cal/hr: 3.59 5.87
+Heat losses, kg-cal/hr × 10⁶: 0.23 0.28
+Total heat input, kg-cal/hr: 4.35 7.12
+Feeds:
+Normal    Max. Design
+Solids, tph: 52.07 68.63
+Brine, tph: 3.93 6.75
+Total cake, tph: 56.00 75.38
+Supply Air (1.076 kg/cm²):
+Normal    Max. Design
+Temperature, °C: 116 5
+Actual m³/hr: 12692 19934
+Weight rate, tph: 16.79 26.37
+
+==================================================
+SLIDE 108
+==================================================
+Fuel Oil and Atomizing Air Specifications
+No. 6 Fuel Oil:
+Normal    Max. Design
+Pressure, kg/cm²: 9.5 9.5
+Flow rate, m³/hr: 0.49 0.77
+Fuel Oil Specifications:
+Type: No. 6
+Gross Heating Value: 18,400 BTU/lb = 10,200 kcal/kg
+Feed Temperature: 90°C
+Analysis (Percent Weight): o Carbon (C): 84.67% o Hydrogen (H): 11.02% o Oxygen (O): 0.38% o
+Nitrogen (N): 0.18% o Sulfur (S): 3.97% o Ash: 0.02% o Specific Gravity: 0.96
+Atomizing Air:
+Normal    Max. Design
+Pressure, kg/cm²: 8.3 8.3
+Weight rate, kg/hr: 233 368
+
+==================================================
+SLIDE 109
+==================================================
+Furnace and Exhaust Gas Specifications
+Furnace Discharge gases:
+Normal    Max. Design
+Temperature, °C: 980 980
+Actual m³/hr: 58035 91161
+Weight rate, tph: 17.26 27.11
+Exhaust gases:
+Normal    Max. Design
+Temperature, °C: 170 170
+Actual m³/hr: 27088 44534
+Weight rate, tph: 20.65 32.90
+Velocity shell, m/sec: 1.28 1.69
+Particulate entrainment, gms/actual m³: 166 152
+
+==================================================
+SLIDE 110
+==================================================
+Product Specifications and Cooling Water
+Potash Product:
+Normal    Max. Design
+Temperature, °C: 150 150
+Dryer Feed Chute Cooling Water:
+Normal    Max. Design
+Flow Rate, m³/hr: 0.5 0.5
+Temp. rise, °C: 10 10
+Potash product, metric tph:
+Normal    Max. Design
+Solids: 53.28 69.46
+H₂O: 0.05 0.07
+Total Product: 53.33 69.53
+Bulk Density:           Min.      Max.
+Product, g/cc: 1.12 1.28
+Dust, g/cc: 0.8 1.12
+
+==================================================
+SLIDE 111
+==================================================
+Product Characteristics
+Material Balance Analysis
+Feed vs. Product: o Total feed: 56.00 tph cake (normal), 75.38 tph (max) o Total product: 53.33 tph
+(normal), 69.53 tph (max) o Moisture removal: 2.67 tph (4.8% reduction) for normal operation
+Solids Recovery: o Feed solids: 52.07 tph (normal), 68.63 tph (max) o Product solids: 53.28 tph
+(normal), 69.46 tph (max) o Apparent gain in normal operation: 1.21 tph (due to crystallization of
+dissolved salts)
+
+==================================================
+SLIDE 112
+==================================================
+Environmental Considerations
+Environmental Parameters
+Atmospheric Pressure: 1.076 kg/cm² absolute (15.3 psia)
+Location of dryer and related equipment: Outdoors
+Design Ambient Temperature: o High: 50°C o Low: 5°C
+Ambient Conditions: Dusty, high in potash salts
+Design Humidity: 40% relative humidity
+
+==================================================
+SLIDE 113
+==================================================
+Emissions Management
+Particulate Control: o Exhaust particulate entrainment: 166 gms/m³ (normal), 152 gms/m³ (max) o
+Dust from operations: 11% plus 0.21mm and 50% less than 0.1mm o Dust collection system required
+(not detailed in data)
+Fuel Analysis (No. 6 Fuel Oil): o Carbon: 84.67% o Hydrogen: 11.02% o Oxygen: 0.38% o Nitrogen:
+0.18% o Sulfur: 3.97% (high - requires emission control) o Ash: 0.02% o Specific gravity: 0.96
+
+==================================================
+SLIDE 114
+==================================================
+Performance Evaluation
+Thermal Efficiency Analysis
+Heat Utilization: o Process heat: 82.5% of total input o Heat losses: 5.3% of total input o Exhaust heat:
+12.2% of total input (estimated)
+Energy Consumption: o Specific energy consumption: ~82 kCal/kg of product o Comparable to
+industry standards for potash drying
+
+==================================================
+SLIDE 115
+==================================================
+System Performance Metrics
+Temperature Transition: o Furnace discharge: 980°C o Product temperature: 150°C o Exhaust gas:
+170°C
+Evaporation Rate: 2.67 tph water (normal)
+Specific Evaporation Rate: ~47 kg water/hour per m³ (estimated)
+Temperature Drop (Furnace to Exhaust): 810°C
+Thermal Efficiency: ~82.5%
+Product Quality: Consistent particle size, low residual moisture (0.1%)
+
+==================================================
+SLIDE 116
+==================================================
+Process Control Requirements
+Temperature monitoring at multiple points: o Furnace (980°C) o Product (150°C) o Exhaust (170°C)
+Flow control for: o Fuel oil (0.49 m³/hr normal) o Atomizing air (233 kg/hr normal) o Feed rate (56.00
+tph normal)
+Moisture monitoring for product quality
+
+==================================================
+SLIDE 117
+==================================================
+Optimization Opportunities
+Potential System Improvements
+Heat Recovery: o Exhaust gas heat recovery (170°C potential) o Feed preheating options
+Emissions Reduction: o Lower sulfur fuel alternatives (current: 3.97% sulfur) o Enhanced particulate
+collection
+Efficiency Improvements: o Insulation optimization to reduce 5.3% heat loss o Flight design
+optimization for better material distribution
+
+==================================================
+SLIDE 118
+==================================================
+Conclusion and Key Takeaways
+Well-designed industrial rotary dryer for potash processing
+Handles significant throughput (56 tph normal, 75.38 tph max) with operational buffer
+Operates with good thermal efficiency (~82.5%)
+High-temperature operation (980°C furnace, 150°C product)
+Designed for harsh outdoor conditions (5-50°C range)
+Areas for potential optimization in heat recovery and emissions control
+`;
+        const chapter4Data = `
+==================================================
+SLIDE 1
+==================================================
+1. Introduction to Hydrocyclones
+Technical Presentation
+Basic Principles of Hydrocyclones
+Definition: Device utilizing centrifugal forces to separate solids from liquid
+Components: o Cylindrical section with tangential feed o Conical section with apex opening for solids
+discharge o Vortex finder pipe for liquid discharge
+
+==================================================
+SLIDE 2
+==================================================
+How Hydrocyclones Work
+Pressurized slurry introduced tangentially
+Spiral motion creates high centrifugal forces
+Solids driven to wall and downward toward apex
+Fluid phase reverses direction and exits through vortex finder
+Separation based on particle size, density, and flow characteristics
+
+==================================================
+SLIDE 3
+==================================================
+Hydrocyclone Operating Principle
+Centrifugal Force: o Creates force up to 200+ times gravity o Separates particles based on settling
+characteristics
+Key Separation Mechanism: o Inner ascending vortex: Carries finer particles to overflow o Outer
+descending vortex: Transports coarser particles to underflow
+
+==================================================
+SLIDE 4
+==================================================
+Classification vs. Clarification
+Hydrocyclones are primarily classifiers rather than absolute clarifiers
+Classification: Separation by particle settling rate
+Sizing: Separation by particle size
+Efficiency determined by: o Particle size distribution o Operating parameters o Mechanical design
+characteristics
+
+==================================================
+SLIDE 5
+==================================================
+2. KREBS gMAX Cyclone Design & Features
+KREBS Engineering Background
+Founded in 1952
+Headquartered in Tucson, Arizona
+First to introduce hydrocyclones to industry
+World leader in hydrocyclone technology
+Over 200,000 cyclone systems sold worldwide
+Sizes ranging from 0.5" (12mm) to 80" (2000mm)
+
+==================================================
+SLIDE 6
+==================================================
+gMAX Technology Evolution
+Improved separation efficiency over traditional cyclones
+Enhanced particle classification performance
+Optimized cone geometry for improved flow patterns
+Higher capacity per unit size
+Reduced wear and extended operational life
+
+==================================================
+SLIDE 7
+==================================================
+Key gMAX Design Innovations
+Modified cone angle and geometry
+Optimized vortex finder design
+Improved inlet design for enhanced tangential entry
+Superior apex configuration
+CycloWash technology option for fines control
+
+==================================================
+SLIDE 8
+==================================================
+CycloWash Technology
+Integrated washing system for improved separation
+Clean water pushes fine particles to overflow
+High efficiency on particles below 20 microns
+Low water consumption (80-120% of underflow)
+Reduces need for multi-stage systems
+Particularly effective for fine lignite particles
+
+==================================================
+SLIDE 9
+==================================================
+3. Example Equipment Configurations
+KREBS Cyclone Model Range
+gMAX10: o 8.40 sq. in. inlet orifice o Capacity: 4-100 GPM (depending on pressure) o Applications:
+Fine particle separation
+gMAX20: o 35.50 sq. in. inlet orifice o Capacity: 30-1000 GPM (depending on pressure) o
+Applications: Medium-duty separation
+
+==================================================
+SLIDE 10
+==================================================
+Component Configuration
+Main Components of gMAX20 Model:
+Inlet flanged adapter with Victaulic grooved connection
+Overflow flanged adapter
+Top cover plate and liner
+Vortex finder (multiple size options)
+Inlet head and liner
+Cone and cone liner
+Apex assembly with adjustable sizing options
+
+==================================================
+SLIDE 11
+==================================================
+Sizing & Selection Guidelines
+Cyclone diameter selection based on required separation
+Vortex finder diameter: 1/4 to 1/3 of cyclone diameter
+Apex diameter: 1/4 to 7/16 of vortex finder diameter
+Multiple units can be manifolded for higher capacity
+Model selection determined by: o Feed rate o Required cut point o Solids concentration
+
+==================================================
+SLIDE 12
+==================================================
+4. Performance Factors & Operating Variables
+Critical Performance Variables
+Process Variables:
+Particle size distribution
+Solids density
+Liquid density and viscosity
+Feed concentration
+Flow rate
+Equipment Variables:
+Cyclone diameter
+Vortex finder diameter
+Apex diameter
+Feed inlet configuration
+Cone angle and length
+
+==================================================
+SLIDE 13
+==================================================
+Pressure Drop & Capacity Relationship
+Pressure drop directly affects separation performance
+Higher pressure = finer separation
+Typical operating range: 5-40 PSI (0.35-2.75 bar)
+Flow capacity increases with: o Cyclone diameter o Pressure drop o Reduced feed concentration
+
+==================================================
+SLIDE 14
+==================================================
+D50 Cut Point Influences
+D50: Particle size with 50% chance of reporting to overflow/underflow
+Factors Affecting D50:
+Cyclone diameter: Larger diameter = higher D50
+Pressure drop: Higher pressure = lower D50
+Feed concentration: Higher concentration = higher D50
+Vortex finder diameter: Larger VF = higher D50
+Specific gravity differential: Higher ΔSG = lower D50
+
+==================================================
+SLIDE 15
+==================================================
+Influence of Cyclone Diameter
+50% reduction in cyclone diameter = ~43% reduction in D50
+Smaller cyclones provide finer separation at the cost of capacity
+Appropriate sizing balances separation efficiency with throughput
+Operating multiple smaller cyclones often preferred over fewer large units
+
+==================================================
+SLIDE 16
+==================================================
+Effect of Feed Solids Concentration
+Higher feed concentration increases hindered settling effects
+Optimum feed concentration typically 5-30% by volume
+Effect on underflow consistency: o Too low: Dilute underflow o Too high: Roping discharge o Optimal:
+40-70% solids in underflow
+
+==================================================
+SLIDE 17
+==================================================
+5. Theoretical Modeling & Equations
+Fundamental Separation Theory
+Based on Stokes' Law principles
+Separation efficiency proportional to: o Particle diameter squared o Specific gravity differential o
+Inverse of liquid viscosity
+Modified by centrifugal force field
+Affected by particle interaction and hindered settling
+
+==================================================
+SLIDE 18
+==================================================
+Mathematical Models for Cyclone Performance
+Three principal approaches:
+1. Empirical models: Based on experimental data
+2. Semi-empirical models: Combining theory with experimental corrections
+3. Computational models: Fluid dynamics simulations
+The Plitt model is a widely-accepted semi-empirical approach for predicting cyclone performance.
+
+==================================================
+SLIDE 19
+==================================================
+The Plitt Model
+Core equation for d50 calculation:
+d50 = Factor * { 50.5 * Dc^0.46 * Di^0.6 * Do^1.21 * exp(0.063 * Cv) } / { Du^0.71 * h^0.38 * Q^0.45 * (ps
+- pl)^0.5 }
+Where:
+d50: Cut size (microns)
+Dc: Cyclone diameter (cm)
+Di: Feed inlet diameter (cm)
+Do: Vortex finder diameter (cm)
+Du: Apex diameter (cm)
+h: Free vortex height (cm)
+Q: Volumetric flow rate (l/min)
+Cv: Feed solids volume concentration (%)
+ps: Solids density (t/m³)
+pl: Liquid density (t/m³)
+Factor: Correction factor
+
+==================================================
+SLIDE 20
+==================================================
+Plitt Model - Pressure Drop Calculation
+Pressure drop across cyclone (kPa):
+ΔP = PressFactor * { 1.88 * Q^1.78 * exp(0.0055 * Cv) } / { Dc^0.37 * Di^0.94 * h^0.28 * (Du² + Do²)^0.87 }
+Where:
+PressFactor: Pressure correction factor
+Other variables as previously defined
+
+==================================================
+SLIDE 21
+==================================================
+Plitt Model - Liquid Split Calculation
+Recovery of feed volume to underflow:
+Rv = S / (S + 1)
+Where S is calculated as:
+S = SFactor * { 1.9 * (Du/Do)^3.31 * h^0.54 * (Du² + Do²)^0.36 * exp(0.0054 * Cv) } / { H^0.24 * Dc^1.11 }
+Where:
+Rv: Recovery of feed volume to underflow
+H: Pressure head in meters of feed slurry
+SFactor: S correction factor
+
+==================================================
+SLIDE 22
+==================================================
+Plitt Model - Efficiency Curve Calculation
+Two methods for calculating partition curves:
+1. Lynch Method: y = [exp(a * di/d50) - 1] / [exp(a * di/d50) + exp(a) - 2] Where a = 1.54 * m - 0.47
+2. Rosin-Rammler Method: y = 1 - exp(-0.693147 * (di/d50)^m)
+Where:
+y: Recovery to underflow (corrected basis)
+di: Particle size
+m: Sharpness of separation
+
+==================================================
+SLIDE 23
+==================================================
+gMAX-Specific Model Adaptations
+The Plitt model for gMAX cyclones incorporates:
+Modified cone angle factor
+Optimized inlet design coefficients
+Adjusted vortex finder relationships
+Enhanced underflow discharge parameters
+These adjustments account for the specific geometry and flow dynamics of the gMAX design.
+
+==================================================
+SLIDE 24
+==================================================
+Corrected Recovery Calculation
+Actual recovery to underflow accounts for liquid bypass:
+y = y' + Rf * (1 - y')
+Where:
+y: Actual recovery to underflow
+y': Corrected recovery to underflow
+Rf: Fraction of feed liquid to underflow
+This correction is essential for accurate modeling of fine particle behavior.
+
+==================================================
+SLIDE 25
+==================================================
+Practical Application Example
+For a gMAX20 cyclone with:
+20" diameter
+5" vortex finder
+2.5" apex
+66% feed solids by weight
+2.8 specific gravity solids
+500 GPM feed rate
+Using the Plitt model equations, we would calculate:
+d50 ≈ 250 microns
+Pressure drop ≈ 15 PSI
+Underflow solids ≈ 75%
+
+==================================================
+SLIDE 26
+==================================================
+Summary & Key Takeaways
+Hydrocyclones provide efficient solid-liquid separation
+KREBS gMAX design offers improved performance over traditional cyclones
+Performance depends on equipment dimensions and process variables
+Plitt model provides reliable prediction of cyclone performance
+Proper sizing and operation are critical for optimal results
+Mathematical modeling enables precise cyclone selection for specific applications
+
+==================================================
+SLIDE 27
+==================================================
+Thank You
+`;
+        const chapter5Data = `
+==================================================
+SLIDE 1
+==================================================
+
+Industrial Screening Technology:
+Fundamentals and Applications
+Introduction to Screening
+
+
+==================================================
+SLIDE 2
+==================================================
+
+Basic Terminology
+Oversize/Plus Material: Material that remains on a given screening surface
+Undersize/Minus Material: Material passing through the screening surface
+Intermediate Material: Material passing one screening surface and retained on a subsequent surface
+Aperture: Opening in the screening surface (defines separation size)
+Open Area (OA): Ratio of total aperture area to total screen deck area
+Cut Point: Size at which particles have equal chance of reporting to undersize or oversize
+Blinding: Aperture blockage by near-size particles
+Pegging: Wedging of particles in apertures
+
+
+==================================================
+SLIDE 3
+==================================================
+
+Industrial Screening Applications
+Main purposes in the minerals industry:
+1. Sizing/Classifying: Separate particles by size for downstream processing
+2. Scalping: Remove coarsest fractions for separate processing
+3. Grading: Prepare multiple products within specified size ranges
+4. Media Recovery: Washing magnetic media from ore in dense medium circuits
+5. Dewatering: Drain free moisture from wet sand slurry6. Desliming/De-dusting: Remove fine material below 0.5mm
+7. Trash Removal: Remove wood fibers or other contaminants
+Key industries: Mining, aggregates, potash, coal, recycling, and chemical processing
+
+
+==================================================
+SLIDE 4
+==================================================
+
+Screening Principles: Particle Passage
+Screening is a probabilistic process with particles presented to the screen surface multiple times.
+Probability of passage for a single spherical particle through a square aperture:
+P = ((x-d)/(x+w))^2
+Where:
+d = particle diameter
+x = aperture size
+w = wire diameter
+For n presentations to the screen: P' = 1-(1-P)^n
+
+
+==================================================
+SLIDE 5
+==================================================
+
+Probability of Passage (Table)
+ Ratio of particle to aperture size Chance of passage per 1000 Number of apertures required in path
+0.001 998 1
+0.1 810 2
+0.5 250 4
+0.7 82 12
+0.9 9.8 100
+0.95 2.0 500
+0.99 0.1 10,000
+Near-mesh particles (0.9-1.0 × aperture size) dramatically reduce screening efficiency and can cause
+blinding and pegging of apertures.
+
+
+==================================================
+SLIDE 6
+==================================================
+
+Stratification and Particle Movement
+[Stratification diagram would be here]Stratification process:
+1. Mixed feed enters screen deck
+2. Vibration causes smaller particles to move down through bed
+3. Larger particles rise to the top
+4. Near-size particles contact screen surface
+5. Undersize particles pass through apertures
+6. Oversize continues along deck
+Material transport via combination of gravity, inclination, and vibrational forces
+
+
+==================================================
+SLIDE 7
+==================================================
+
+Screening Mechanisms
+Two main screening zones:
+1. Crowded/Saturation Screening:
+Initial zone with thick bed (several times aperture thickness)
+Rapid stratification of particles
+Fines move through interstices of larger particles
+Constant flow through apertures
+2. Statistical/Separated Screening:
+Later zone with reduced bed height
+Particles act as individual entities
+Each particle has statistical chance to pass through aperture
+Efficiency depends on number of presentations
+
+
+==================================================
+SLIDE 8
+==================================================
+
+Performance Assessment: Mass Balance
+Efficiency calculation from mass balance:
+F = feed rate (t/h)
+C = coarse/oversize product rate (t/h)
+U = fine/undersize product rate (t/h)
+f, c, u = fractions of oversize in feed, oversize, and undersize
+Basic mass balance equations:F = C + U
+Ff = Cc + Uu
+F(1-f) = C(1-c) + U(1-u)
+Therefore:
+C/F = (f-u)/(c-u)
+U/F = (c-f)/(c-u)
+
+
+==================================================
+SLIDE 9
+==================================================
+
+Performance Assessment: Recovery Calculations
+Recovery of oversize to oversize product:
+(Cc)/(Ff) = (c(f-u))/(f(c-u))
+Recovery of undersize to undersize product:
+(U(1-u))/(F(1-f)) = ((1-u)(c-f))/((1-f)(c-u))
+Combined efficiency (overall effectiveness):
+E = (c(f-u)(1-u)(c-f))/(f(c-u)^2(1-f))
+For screens where aperture and cut point are similar and little coarse material in underflow (u ≈ 0):
+E = (c-f)/(c(1-f))
+
+
+==================================================
+SLIDE 10
+==================================================
+
+Performance Assessment: Partition Curves
+[Partition curve would be here]
+X-axis: Particle size (log scale)
+Y-axis: Percentage reporting to oversize
+Ideal curve: Vertical line at aperture size
+Real curve: S-shaped with imperfect separation
+Cut point (d50): Size at which 50% reports to oversize
+Sharpness of separation (α): Typically 0.2-0.7 (higher = sharper)
+Bypass (Rf): Fine material incorrectly reporting to oversize
+Used for simulation and design purposes in process flowsheets
+
+
+==================================================
+SLIDE 11
+==================================================
+
+Factors Affecting Screen Performance1. Particle Size Distribution:
+Near-mesh particles (75-125% of aperture size) reduce efficiency
+High proportion of half-size material increases capacity
+2. Feed Rate:
+Higher rates reduce efficiency (thicker bed)
+Capacity vs. efficiency trade-off
+3. Screen Angle:
+Affects particle presentation to apertures
+Affects material velocity and residence time
+Steeper angles increase capacity but may reduce efficiency
+4. Particle Shape:
+Irregular, elongated particles have lower passage probability
+Slabby particles may "ride" over apertures
+
+
+==================================================
+SLIDE 12
+==================================================
+
+More Factors Affecting Performance
+5. Open Area:
+Higher open area increases capacity
+Limited by mechanical strength requirements
+6. Vibration:
+Affects stratification and particle movement
+G-force, frequency, amplitude, and stroke angle all critical
+7. Moisture:
+Critical range (4-8%) causes maximum difficulty
+Below 4%: Dust control needed
+Above 8%: Material may flow as slurry
+8. Screen Motion:
+Type of motion affects transport and stratification
+Different motions suited to different applications
+
+
+==================================================
+SLIDE 13
+==================================================
+
+Bed Depth Considerations
+Theoretical bed depth calculation:
+B = (M/ρb)/(3.6Wv)Where:
+B = bed depth (mm)
+M = solids mass flow (t/h)
+ρb = bulk density (t/m³)
+W = screen width (m)
+v = rock velocity (m/s)
+Rule of thumb:
+Dry screening: 3:1-4:1 screen apertures in thickness (2:1 common)
+Wet screening: 4:1-5:1 times aperture
+Larger ratios reduce efficiency of near-size separation
+Smaller ratios cause excessive bouncing
+
+
+==================================================
+SLIDE 14
+==================================================
+
+Screen Capacity Modeling
+Empirical capacity model:
+Theoretical area required = (Total t/h undersize in feed)/(C × F1 × F2 × F3 × ... × Fn)
+Where:
+C = Base-line screen capacity in t/h of undersize per unit area
+F₁ to Fₙ are correction factors:
+ Factor Description Range
+F₁ Oversize quantity 0.7-1.0
+F₂ Half-size material 0.8-1.3
+F₃ Near-size material 0.5-0.9
+F₄ Material density 0.5-1.5
+F₅ Deck position 0.8-1.0
+F₆ Open area 0.6-1.2
+F₇ Aperture shape 0.9-1.15
+
+
+==================================================
+SLIDE 15
+==================================================
+
+Vibration Characteristics
+G-force calculation: Γ = a(2πf)²/9.81Where:
+Γ = vibration g-force
+a = amplitude (m)
+f = frequency (Hz)
+Typical vibrating screen parameters:
+G-force: 3-7G (typically 4-5G)
+Frequency: 700-1200 rpm for coarse, up to 3600 rpm for fine
+Amplitude: 5-15 mm for coarse, smaller for fine screening
+Stroke angle: 30-60° to screen deck
+
+
+==================================================
+SLIDE 16
+==================================================
+
+G-Force Effects on Screening
+ G-Force Range Effects and Applications
+<1.5 Practically no movement, ineffective
+1.5-2.5 Limited stratification, good for soft materials where degradation is problematic
+3.0-3.5 Optimal for inclined screens, good stratification and velocity
+4.0-5.0 Good stratification but reduced velocity between deck and particles
+5-6 Excessive projection, reduced efficiency, increased wear
+Horizontal screens typically require higher G-forces (4.0-4.5) to compensate for lack of gravitational
+assistance in material transport.
+
+
+==================================================
+SLIDE 17
+==================================================
+
+Types of Screening Equipment
+By Motion Type:
+1. Fixed Screens: No motion (static grizzlies, sieve bends)
+2. Moving Screens:
+Linear Motion: Horizontal/inclined vibrating screens
+Circular Motion: Inclined screens
+Elliptical Motion: Combination screens
+Rotary Motion: Trommels, rotary screens
+By Process:Dry Screening Equipment
+Wet Screening Equipment
+By Application:
+Scalping screens
+Sizing screens
+Dewatering screens
+Fine screens
+
+
+==================================================
+SLIDE 18
+==================================================
+
+Dry Screening Equipment
+Vibrating Screens:
+Inclined screens (circular motion): Standard for most applications, 15-28° inclination
+Horizontal screens (linear motion): Higher accuracy, lower capacity than inclined
+Banana screens (multi-slope): High capacity and efficiency, variable slope
+High-frequency screens: Fine screening applications, up to 3600 rpm
+Other Equipment:
+Grizzly screens: Very coarse separations (>50mm), parallel bars
+Roller screens: High capacity, low headroom requirements, 3-300mm range
+Trommel screens: Robust, simple design, cylindrical rotating screen
+Flip-flow screens: Special design for difficult materials, flexible screen panels
+
+
+==================================================
+SLIDE 19
+==================================================
+
+Wet Screening Equipment
+Vibrating Screens with Spray Systems:
+Similar to dry screens but with water addition
+Spray bars with multiple nozzles (typically 4-12mm openings)
+Pressure ranges 100-300 kPa
+Water flow 0.5-1 m³/t for washing fines
+Dewatering sections at discharge end
+Specialized Wet Screening Equipment:
+Sieve bends/DSM screens: Curved screen of wedge wire bars
+Derrick Stack Sizer™: Multiple stacked screen decks for fine separationLinear screens: Belt-type screening for trash removal
+Pansep screens: Series of pans with tensioned mesh
+Hydrosizers: Uses water current for classification
+
+
+==================================================
+SLIDE 20
+==================================================
+
+Screen Motion Mechanisms
+Circular Motion (Single-shaft):
+Shaft at center of gravity creates circular vibration
+Off-center shaft creates elliptical motion
+Requires inclined mounting (15-28°)
+Good for anti-pegging but requires inclination for transport
+Typically rotates at 700-1200 rpm
+Linear Motion (Double-shaft):
+Two counter-rotating shafts with unbalanced weights
+Linear vibration at 30-60° angle to deck
+Can be installed horizontally or on slight incline
+Better material transport, especially for horizontal installations
+Preferred for banana screens and horizontal screens
+
+
+==================================================
+SLIDE 21
+==================================================
+
+Advanced Screen Motion Mechanisms
+Elliptical Motion (Triple-shaft):
+Three shafts connected by gears
+Combines benefits of circular and linear motion
+Enhanced particle movement and anti-pegging properties
+Can be used on horizontal or banana screens
+Claimed higher capacities and efficiencies
+Resonance Screens:
+Screen frame connected to balanced frame by rubber buffers
+Natural resonance frequency matches vibrating screen body
+Energy stored and re-imparted on return stroke
+Sharp return motion promotes good screeningEnergy-efficient design
+
+
+==================================================
+SLIDE 22
+==================================================
+
+Banana Screens (Multi-slope)
+[Banana screen diagram would be here]
+Key characteristics:
+Variable slope: 40-30° at feed end to 0-15° at discharge
+Typically uses linear-stroke vibration
+Multiple deck sections with decreasing angles (3.5-5° increments)
+Operating principles:
+Steep initial section creates thin bed and rapid stratification
+Middle sections maintain particle movement while allowing screening
+Final flat sections maximize residence time for near-mesh particles
+Different velocities at each section (e.g., 2/1/0.5 m/s)
+Advantages:
+Higher capacity (3-4× conventional screens)
+Better separation efficiency
+Handling of variable feed rates
+
+
+==================================================
+SLIDE 23
+==================================================
+
+Derrick Stack Sizer™
+[Derrick Stack Sizer diagram would be here]
+Design concept:
+5 individual screen decks stacked vertically
+High-frequency vibration (up to 3600 rpm)
+Small amplitude vibration
+Fine screening capacity (down to 45μm)
+Space-efficient design
+Technical specifications:
+Urethane screen surfaces
+Multiple screen panels on each deckFeed distributed to all 5 decks
+Common collection points for oversize and undersize
+Capacity: 50-125% more than equivalent single feed machines
+Applications:
+Fine screening in mineral processing
+Classification ahead of grinding circuits
+Alternative to hydrocyclones for sharper separations
+Coal preparation applications (100-350μm cut points)
+Low-ash coal recovery from desliming circuits
+
+
+==================================================
+SLIDE 24
+==================================================
+
+Screen Media Types
+Three main materials:
+1. Steel:
+Woven wire mesh: Highest open area, relatively fragile
+Perforated plate: More robust, lower open area
+Self-cleaning wire: Special crimped design to resist blinding
+2. Rubber:
+Excellent impact resistance
+Good for applications with top size >50mm
+Lower open area than steel
+10x wear life compared to wire
+3. Polyurethane:
+Exceptional abrasion resistance
+Preferred for wet applications
+Longer life in most applications
+Less prone to blinding
+
+
+==================================================
+SLIDE 25
+==================================================
+
+Screen Media Attachment Systems
+Bolt-in Panels:
+Rigid steel or composite plates
+Custom-designed aperture shapes and sizesTapered apertures to reduce pegging
+Used for large particles (>50mm)
+Tensioned Wire Cloth:
+Stretched taut between sides or along length
+High open area and lighter weight
+Requires regular tensioning
+Various weave patterns available
+Quick to replace for product specification changes
+Modular Panels:
+Typically 305×305mm or 610×305mm panels
+Easy replacement of damaged sections
+Different panel types can be used in high-wear areas
+No tensioning required
+Quieter operation than wire
+
+
+==================================================
+SLIDE 26
+==================================================
+
+PART 2: Case Study
+Arab Potash Company Banana Screens
+Arab Potash Company Overview
+Company Profile:
+Located in Jordan (P.O. Box 1470, Amman)
+Major producer of potash (potassium chloride)
+Uses solar evaporation and processing of Dead Sea brine
+Two Primary Screening Applications:
+1. Carnallite Screens: Process mineral carnallite (KCl·MgCl₂·6H₂O)
+2. Crystallizer Screens: Process crystallized potassium chloride
+Screening Objectives:
+Size classification of potash products
+Removal of oversized materialProduction of uniform product within specification
+Efficient dewatering and washing
+
+
+==================================================
+SLIDE 27
+==================================================
+
+Potash Screening Challenges
+Material Characteristics:
+Soluble in water (requires brine washing)
+Tends to form agglomerates
+Relatively soft material (Mohs hardness 2-3)
+Can be abrasive due to impurities
+Prone to caking and moisture absorption
+Process Requirements:
+Precise size control for product specifications
+Minimal product degradation during screening
+Efficient washing without excessive dissolution
+High screening efficiency (low misplaced material)
+Consistent operation despite feed variations
+
+
+==================================================
+SLIDE 28
+==================================================
+
+Banana Screen Technology Selection
+Why Banana Screens for Potash Processing?
+1. Capacity Requirements:
+High throughput needed
+Multiple slopes provide 3-4× capacity of conventional screens
+2. Material Characteristics:
+Potash requires efficient washing
+Multi-slope design optimizes both transport and separation
+3. Process Efficiency:
+Variable slopes match process requirements
+Steeper sections prevent bed buildup
+Flatter sections maximize screening efficiency
+4. Operational Advantages:
+Handles variable feed ratesLess blinding and pegging issues
+Lower maintenance requirements
+
+
+==================================================
+SLIDE 29
+==================================================
+
+Banana Screen Operating Principles
+[Banana screen operating principles diagram would be here]
+Three-zone operation:
+1. Feed/Scalping Zone (Steepest angle):
+Rapid material transport
+Thin material bed
+Coarse/oversize removal
+Initial washing
+2. Transition Zone (Intermediate angle):
+Continued washing
+Efficient removal of intermediate particles
+Controlled material velocity
+3. Separation Zone (Flattest angle):
+Maximum residence time
+Final washing
+Fine particle removal
+Dewatering before discharge
+
+
+==================================================
+SLIDE 30
+==================================================
+
+Siebtechnik Banana Screen Design
+Key Design Features:
+Multi-slope deck with 3 distinct sections
+Linear motion mechanism with dual vibration exciters
+Wedge-wire screening surface for potash applications
+Wash system integrated with overflow design
+Robust support structure with vibration isolation
+Central lubrication system for bearings
+Protected drive components to prevent brine corrosion
+Adjustable vibration parameters via clamping screwsBrine overflow system for washing and material transport
+
+
+==================================================
+SLIDE 31
+==================================================
+
+Technical Specifications: Carnallite Screens
+Equipment Data (from Vendor Sheet):
+Manufacturer: Siebtechnik Model BHG 15/85/5/91,68/I-G
+Number of Machines: 2
+Nominal Size: 1.85 x 9.16 m
+Effective Screen Area: 14.8 m²
+Screen Sections:
+Sizing section length: 6.65 m
+Scalping section length: 1.9 m
+Screen Cloth:
+Optima-wedge wire
+Sizing openings: 1.8/1.6/1.25 mm
+Scalping opening: 28 mm
+Cut size: 14 mm and 25 mm
+
+
+==================================================
+SLIDE 32
+==================================================
+
+Carnallite Screen Design Calculations
+G-Force Calculation: Using the formula: Γ = a(2πf)²/9.81
+Amplitude: 5 mm = 0.005 m
+Frequency: 15.5 Hz
+Γ = 0.005 × (2π × 15.5)²/9.81 = 4.8G
+Projected Capacity Estimation: Based on banana screen area requirements formula:
+Area required = Feed rate × (%Undersize/100) / (Base capacity × Correction factors)
+For potash screening with 14.8 m² effective area, and assuming typical correction factors:
+Estimated throughput capacity: 350-450 t/h
+Bed Depth Analysis: For effective screening, bed depth should be 3-4× aperture size:
+Maximum bed depth for 1.8 mm aperture: 5.4-7.2 mm
+Bed depth decreases along screen length as fines are removed
+
+
+==================================================
+SLIDE 33
+==================================================
+
+Carnallite Screen Operating Parameters
+Operating Parameters (from Vendor Sheet):
+Inclination: 34°/23°/12° (multi-slope design)
+Direction of throw: 38°
+Vibration frequency: 15.5 Hz
+Vibration amplitude: 5 mm
+Screen acceleration: 4.8 G's
+Conveying speed: 2/1/0.5 m/s (varies by section)
+Wash brine flow: 110 m³/h
+Open area: 39% (sizing), 72% (scalping)
+Expected screen life: 10-12 months
+Solids in oversize: 95%
+Misplaced material: 10% fines in oversize
+
+
+==================================================
+SLIDE 34
+==================================================
+
+Conveying Speed Analysis for Carnallite Screen
+Material Velocity Calculation: For banana screens, material velocity is influenced by:
+Inclination angle
+Vibration parameters
+Material characteristics
+Estimated velocity for each section:
+1. First section (34° inclination):
+Velocity = K × g × sin(34°) × (G-force factor)
+Where K is a material constant (typically 0.5-0.7 for potash)
+Calculated velocity ≈ 2 m/s (matches specification)
+2. Middle section (23° inclination):
+Velocity ≈ 1 m/s (matches specification)
+3. Final section (12° inclination):
+Velocity ≈ 0.5 m/s (matches specification)
+Residence time calculation:Total screen length: 8.55 m (6.65m + 1.9m)
+Average residence time: 6-8 seconds (based on sectional velocities)
+
+
+==================================================
+SLIDE 35
+==================================================
+
+Technical Specifications: Crystallizer Screens
+Equipment Data (from Vendor Sheet):
+Manufacturer: Siebtechnik Model BHG 16/66.5/73,42/I-G
+Number of Machines: 2
+Nominal Size: 1.65 x 7.34 m
+Effective Screen Area: 10 m²
+Screen Sections:
+Sizing section length: 6.65 m
+No separate scalping section
+Screen Cloth:
+Optima-wedge wire
+Sizing openings: 1.0/1.0/0.63 mm
+Cut size: 0.8 mm
+Expected life: 10-12 months
+
+
+==================================================
+SLIDE 36
+==================================================
+
+Crystallizer Screen Efficiency Calculation
+Screen Efficiency Analysis:
+Using the simplified efficiency formula: E = (c-f)/(c(1-f))
+Where:
+E = efficiency (fraction)
+c = fraction of oversize in overflow (0.95 from data sheet)
+f = fraction of oversize in feed (estimated at 0.6)
+E = (0.95-0.6)/(0.95×(1-0.6)) = 0.35/0.38 = 0.92 = 92%
+Practical interpretation:
+95% solids in oversize (5% undersize misplacement)
+High efficiency is critical for fine potash product specification
+Smaller aperture (0.63 mm) in final section ensures maximum removal of fines
+
+
+==================================================
+SLIDE 37
+==================================================
+
+Crystallizer Screen Operating Parameters
+Operating Parameters (from Vendor Sheet):
+Inclination: 36°/23°/5° (multi-slope design)
+Direction of throw: 45°
+Vibration frequency: 15.5 Hz
+Vibration amplitude: 5 mm
+Screen acceleration: 4.8 G's
+Conveying speed: 2/1/0.3 m/s (varies by section)
+Wash brine flow: 110 m³/h
+Open area: 27% (sizing)
+Solids in oversize: 95%
+Misplaced material: 5% fines in oversize
+
+
+==================================================
+SLIDE 38
+==================================================
+
+Open Area and Capacity Analysis
+Open Area Calculation for Wedge Wire: For typical wedge wire screen:
+Open Area (%) = Slot width/(Slot width + Wire width) × 100
+For Crystallizer Screen with 1.0 mm openings:
+Assuming 1.5 mm wire width
+Open Area = 1.0/(1.0+1.5) × 100 = 40%
+Actual average open area: 27% (from data sheet)
+Lower than calculated due to structural supports and design factors
+Capacity Impact Assessment:
+Reduced open area decreases theoretical capacity by ≈35%
+Compensated by multi-slope design which increases efficiency
+Final throughput maintained through optimized parameters
+
+
+==================================================
+SLIDE 39
+==================================================
+
+Engineering tradeoff
+Comparative Analysis with Calculations Parameter Carnallite Screens Crystallizer Screens Calculation Impact
+G-force 4.8G 4.8G Optimal for both applications
+Open area 39% 27% ≈30% capacity difference
+Cut size ratio 0.88 (14/16) 0.8 (0.8/1.0) Similar efficiency target
+Conveying speed 2/1/0.5 m/s 2/1/0.3 m/s 40% slower final section for finer separation
+Final inclination 12° 5° Flatter angle for finer material
+Theoretical capacity ≈38 t/h/m² ≈29 t/h/m² Based on area and parameters
+Engineering tradeoff: Crystallizer screens sacrifice some capacity for higher efficiency with finer material
+
+
+==================================================
+SLIDE 40
+==================================================
+
+Wash System Design Calculations
+Wash Water Requirements Analysis:
+Typical wash water for potash screening:
+0.3-0.5 m³/t for effective washing
+For Carnallite Screen with estimated 375 t/h throughput:
+Required wash water: 375 × 0.3 = 112.5 m³/h
+Actual wash brine flow: 110 m³/h (from data sheet)
+Water usage is optimized for potash processing requirements
+Wash System Distribution:
+Multiple spray points required along screen length
+Spray system designed to ensure uniform distribution across 1.85m width
+Higher flow rates at feed end where material bed is thickest
+
+
+==================================================
+SLIDE 41
+==================================================
+
+Screen Equipment Sizing Verification
+Deck Loading Analysis:
+Typical maximum loading for banana screens: 35-45 t/h/m²
+Carnallite Screen: Estimated 375 t/h ÷ 14.8 m² = 25.3 t/h/m²
+Crystallizer Screen: Estimated 300 t/h ÷ 10 m² = 30 t/h/m²
+Both screens operate within optimal loading ranges
+Width-to-Length Ratio:Carnallite: 1.85:9.16 = 1:4.95
+Crystallizer: 1.65:7.34 = 1:4.45
+Industry standard for banana screens: 1:4 to 1:5
+Both screens fall within optimal design ranges
+Aperture-to-Cut Size Relationship:
+Theoretical relationship: Cut size ≈ 0.8-0.9 × smallest aperture
+Carnallite: 14 mm vs. 1.25 mm (specialized application)
+Crystallizer: 0.8 mm vs. 0.63 mm (ratio = 1.27)
+
+
+==================================================
+SLIDE 42
+==================================================
+
+Vibration Parameter Optimization
+Vibration Optimization Analysis:
+Optimal G-force for screening is determined by:
+Material characteristics
+Aperture size
+Bed depth
+Screen inclination
+For the Arab Potash screens:
+Current G-force: 4.8G (both screen types)
+Ideal perpendicular component: 3.0-3.5G
+For 34° section: 4.8 × cos(34°) = 3.98G perpendicular to deck
+For 5° section: 4.8 × cos(5°) = 4.78G perpendicular to deck
+Parameter adjustment calculations: If modifications were needed:
+To reduce G-force: Lower amplitude or frequency
+G-force ∝  amplitude × frequency²
+10% G-force reduction requires ≈5% frequency reduction or 10% amplitude reduction
+
+
+==================================================
+SLIDE 43
+==================================================
+
+Screen Maintenance Considerations
+Wear Rate Estimation:
+Expected screen life: 10-12 months (from data sheet)Operating hours per year: ≈8,000 hours (typical)
+Wear rate = 100% ÷ 11 months = 9.1% per month
+Critical inspection interval: 1-2 months
+Component Lifetime Analysis:
+Screen cloth: 10-12 months
+Vibration bearings: 2-3 years (estimated)
+Support springs: 3-5 years (estimated)
+Motors: 5+ years with proper maintenance
+Maintenance scheduling optimization:
+Planned cloth replacement during annual shutdown
+Monthly inspections for wear and tensioning
+Regular monitoring of vibration parameters
+
+
+==================================================
+SLIDE 44
+==================================================
+
+Process Integration and Control
+Position in Process Flow:
+Carnallite Screens:
+Located after primary processing
+Feed from crushing/grinding
+Undersize to further processing
+Oversize may be recycled
+Crystallizer Screens:
+Final product screening
+Feed from crystallization
+Undersize to final product
+Oversize may be reprocessed
+Process control strategy:
+Feed rate adjusted based on screen performance
+Wash brine flow modified based on product quality
+Vibration parameters maintained at design specificationsProduct monitored for size distribution compliance
+
+`;
+        const chapter6Data = `
+
+==================================================
+SLIDE 1
+==================================================
+
+Sedimentation and Thickening
+Theory, Design, and Calculations
+Course Outline - Part 1
+Definition and Fundamentals
+Particle Settling Principles
+Settling Regimes
+Flocculation Principles
+Equipment Selection and Sizing
+Thickener Design Equations
+Equipment Design Features
+Instrumentation and Control
+Operation and Troubleshooting
+
+
+==================================================
+SLIDE 2
+==================================================
+
+Section 1: Definition and Fundamentals
+Definition of Sedimentation
+Separation of suspended solid particles from a liquid by gravitational settling
+Encompasses two unit operations:
+Clarification: Focus on producing clear overflow
+Thickening: Focus on increasing solids concentration
+Equipment designs differ based on primary objectives
+
+
+==================================================
+SLIDE 3
+==================================================
+
+Clarification Equipment Features
+Substantial depth
+Deep feedwell
+Long overflow weir
+Provisions for enhancing settling rate through flocculation
+Focus on clarity of overflow
+
+
+==================================================
+SLIDE 4
+==================================================
+
+Thickening Equipment Features
+Greater mechanical strength
+Mechanisms for relieving load on raking systems
+Design features optimized for solids concentration
+Focus on underflow density
+
+
+==================================================
+SLIDE 5
+==================================================
+
+Testing Methods by Objective
+Clarifier tests focus on solids removal rate measurement
+Thickening tests concentrate on solids concentration rate
+Equipment selection based on process requirements
+
+
+==================================================
+SLIDE 6
+==================================================
+
+Section 2: Particle Settling Principles
+Basic Forces in Sedimentation
+Gravity: Primary driving force
+Buoyancy: Opposes gravity based on density difference
+Drag: Resistance to motion through fluid
+Key factors affecting sedimentation:
+Particle size and density
+Liquid density and viscosity
+Environmental conditions
+
+
+==================================================
+SLIDE 7
+==================================================
+
+Terminal Velocity Equation
+For particles in the 1-200 μm size range:
+V_m = (KD^2(ρ_s-ρ_l))/μ
+Where:
+V_m = terminal velocity
+D = particle diameter
+ρ_s = density of solid particles
+ρ_l = density of liquid
+μ = viscosity of liquid
+K = constant (0.002 for V_m in m/h, D in μm, and μ in cP)
+
+
+==================================================
+SLIDE 8
+==================================================
+
+Application of Terminal Velocity
+For particles classified as discrete (Class 1 solids):
+Sand grains, salt crystals, etc.
+Virtually no tendency to cohere
+Settle at steady rate
+For these applications:
+Clarifier size determined almost solely by particle settling rate
+Detention time has minimal influence
+
+
+==================================================
+SLIDE 9
+==================================================
+
+Section 3: Settling Regimes
+Three Settling Regimes
+1. Particulate settling (Discrete Particles)
+2. Zone settling (Hindered settling)
+3. Compression settling
+All three regimes typically exist simultaneously in sedimentation operations, with one usually having 
+primary influence on equipment design.
+
+
+==================================================
+SLIDE 10
+==================================================
+
+Particulate Settling (Class 1)
+Discrete particles with no tendency to cohere
+Settling velocity constant and independent of concentration
+Primarily governed by Stokes' Law
+Examples: Sand, coarse minerals
+
+
+==================================================
+SLIDE 11
+==================================================
+
+Zone Settling (Hindered Settling)
+As solids concentration increases, particles settle as a mass
+Characterized by distinct interface between clear liquid and settling solids
+Settling rates are functions of solids concentration
+Most thickener sizing procedures based on this behavior
+Area determined by liquid-handling capacity of critical concentration zone
+
+
+==================================================
+SLIDE 12
+==================================================
+
+Compression Settling
+At even higher concentrations, settling restrained by:
+Hydrodynamic forces
+Mechanical support from lower particle layers
+In this compression zone:
+Weight of upper particles influences concentration rate below
+Rate affected by pulp depth and mechanical action (raking)
+
+
+==================================================
+SLIDE 13
+==================================================
+
+Section 4: Flocculation
+Flocculation Principles
+Increases particle size to enhance settling rates
+Trade-off with particle density since flocs trap liquid
+Optimal procedures balance floc growth to improve both settling rate and final density
+
+
+==================================================
+SLIDE 14
+==================================================
+
+Flocculation Reagents
+Coagulants:
+Aluminum sulfate
+Lime
+Ferric sulfate
+Flocculants:
+Organic polymers
+Detention times vary:
+Up to 30 minutes for coagulation of dilute suspensions
+Seconds to minutes for polymer flocculation
+
+
+==================================================
+SLIDE 15
+==================================================
+
+Velocity Gradient Calculations
+For pipe flow entering vessel:
+G = sqrt(v^2/(2vt))
+Where:
+G = average velocity gradient
+v = average velocity of flow
+v = kinematic viscosity
+t = detention time in seconds
+
+
+==================================================
+SLIDE 16
+==================================================
+
+Power Input for Flocculation
+For mechanical mixing:
+G = sqrt(P/(Vμ))
+Where:
+P = power input
+V = basin volume
+μ = absolute viscosity
+For most flocculation applications, G values of 20-100 s⁻¹ are considered satisfactory.
+
+
+==================================================
+SLIDE 17
+==================================================
+
+Section 5: Equipment Selection and Sizing
+Selecting Sedimentation Equipment
+Real suspension settling behavior cannot be reliably predicted from theory alone
+Laboratory or pilot-plant tests on actual samples necessary
+Testing procedures depend on solids characteristics
+Empirical approaches have proven most reliable
+
+
+==================================================
+SLIDE 18
+==================================================
+
+Testing Procedures Based on Material
+For non-cohering particulate solids:
+Long and short-tube tests
+Interface descent rate measurements
+For flocculent particles:
+Detention tests
+
+
+==================================================
+SLIDE 19
+==================================================
+
+Long-Tube Method
+Uses 2-4 m long transparent tube with sampling taps
+Procedure:
+1. Fill with representative feed suspension
+2. Time predetermined detention period
+3. Withdraw samples from successive taps
+4. Analyze suspended solids concentration
+5. Calculate average concentrations
+For particulate solids with little cohesion, data typically falls on a single line at all detention times
+Area efficiencies of 65-75% typically used as scaleup factors
+
+
+==================================================
+SLIDE 20
+==================================================
+
+Short-Tube Method
+Similar to long-tube test but analyzes entire supernatant
+1-L cylinder or larger tube
+Supernatant siphoned off after specific settling intervals
+Also used for hydroseparator tests
+Simple procedure for smaller scale testing
+
+
+==================================================
+SLIDE 21
+==================================================
+
+Detention Test
+Conducted in 2-4 L vessel with 0.5:1 diameter-to-depth ratio
+Preferred for flocculent solids
+Data interpretations:
+1. Second-order equation (for suspensions with unsettleable solids): Kt = 1/(C-C_∞) - 1/(C_o-C_∞)
+2. Logarithmic form (for low unsettleable solids): C = Kt^m
+Required detention time × flow rate gives clarifier basin volume
+Efficiency factors (25-60%) must be applied
+
+
+==================================================
+SLIDE 22
+==================================================
+
+Bulk-Settling Test
+Determines minimum required settling area
+Measures settling rate of flocculated particles
+Typically applies scaleup factor of 0.5-0.65 to observed rate
+
+
+==================================================
+SLIDE 23
+==================================================
+
+Section 6: Thickener Design Equations
+Thickener Basin Area Determination
+Two primary methods for determining required area:
+1. Coe and Clevenger Method (1916)
+2. Talmage and Fitch Method (based on Kynch theory)
+Both aim to calculate the minimum area needed to prevent critical concentration zone formation.
+
+
+==================================================
+SLIDE 24
+==================================================
+
+Coe and Clevenger Method
+For non-flocculating slurries using multiple samples of varying concentration:
+SI units: Unit area = ((1/C-1/C_u))/v m²/(t)(d)
+English units: Unit area = (1.333(F-D))/(R(Sp. Gr._l)) ft²/(ton)(d)
+Where:
+C = test solids concentration (kg/L)
+C_u = underflow solids concentration (kg/L)
+v = initial settling rate (m/d)
+F = feed dilution (lb liquid/lb solids)
+D = underflow dilution (lb liquid/lb solids)
+R = initial settling rate (ft/h)
+Sp. Gr.l = specific gravity of liquid
+
+
+==================================================
+SLIDE 25
+==================================================
+
+Talmage and Fitch Method
+Better for flocculated pulps, using a single batch test:
+Unit area = t_u/(C_o H_o)
+Where:
+t_u = settling time (days)
+C_o = feed solids concentration
+H_o = initial height of pulp
+The critical time t_u can be determined from the settling curve using various methods:
+Bisection of angle formed by tangents
+Oltmann method (line from start to inflection point)
+Wilhelm-Naide method (intersection of underflow line and settling curve)
+
+
+==================================================
+SLIDE 26
+==================================================
+
+Compression Zone Considerations
+For materials in compression, depth correction factors must be applied:
+Actual unit area = (calculated unit area) × (h/H)^n
+Where:
+h = average depth of pulp in compression in test cylinder
+H = expected depth in full-scale thickener (usually limited to 1 m)
+n = exponent from test work (typically 0.2-0.7)
+
+
+==================================================
+SLIDE 27
+==================================================
+
+Compression Zone Unit Volume
+V = t_c(ρ_s-ρ_l)/[ρ_s(ρ_u-ρ_l)]
+Where:
+V = unit volume, m³/(t)(d)
+t_c = compression time for particular underflow concentration
+ρ_s, ρ_l, ρ_u = densities of solids, liquid, and pulp
+
+
+==================================================
+SLIDE 28
+==================================================
+
+Torque Selection
+Unlike other equipment, sedimentation units normally operate at 5-20% of their torque capability, with 
+extra capacity for handling upsets and overloads.
+Torque requirements follow the relationship:
+T = kd^2
+Where:
+T = torque (N·m or ft·lb)
+d = thickener diameter (m or ft)
+k = proportionality constant based on application
+
+
+==================================================
+SLIDE 29
+==================================================
+
+K-Factor Determination
+The k-factor varies by application:
+Light duty (clarification): 15-60 N/m (1-4 lbs/ft)
+Standard (magnesium oxide, lime softening): 70-130 N/m (5-9 lbs/ft)
+Heavy duty (copper tails, iron tails): 150-290 N/m (20-40 lbs/ft)
+Extra heavy duty (uranium CCD, iron ore concentrate): 290+ N/m (40+ lbs/ft)
+
+
+==================================================
+SLIDE 30
+==================================================
+
+"LDC" Method for Mass Balance
+For CCD applications, the "LDC" method calculates mass balance:
+L = kg liquor / kg solids
+D = kg solute / kg solids
+C = kg solute / kg liquor (where C = D/L)
+Effective CCD requires constant flow rates and underflow concentrations, with automatic control for 
+optimum performance.
+
+
+==================================================
+SLIDE 31
+==================================================
+
+Section 8: Equipment Design Features
+Thickener Tanks
+Typically circular (some square/rectangular for water treatment)
+Construction materials:
+Steel
+Concrete
+Wood
+Concrete walls with earthen bottom
+Earth with impermeable lining
+Tank bottoms slope 4-25% to aid underflow removal
+Dual-slope bottoms common in larger thickeners
+
+
+==================================================
+SLIDE 32
+==================================================
+
+Drive-Support Structures
+Three basic designs:
+1. Bridge-supported mechanism
+Common for units up to 28m diameter
+Transfers torque loads to tank periphery
+More consistent underflow concentration
+Lower cost for smaller units
+2. Center-column-supported mechanism
+Used for 28m to 183m diameter units
+Large-diameter center columns (caissons)
+3. Traction-drive mechanism
+For tanks larger than 60m diameter
+Easier maintenance in remote locations
+Requires heavy concrete wall for drive support
+
+
+==================================================
+SLIDE 33
+==================================================
+
+Rake Drive Assemblies
+Core components:
+Drive and lift assembly
+Rake structure
+Components typically include:
+Steel or iron main spur gears on bearings
+Alloy steel pinions
+Bronze worm gear driven by hardened-steel worm
+Torque-measuring devices
+Lifting mechanisms for abnormal operations
+
+
+==================================================
+SLIDE 34
+==================================================
+
+Rake Designs
+Three basic fixed-rake-arm designs:
+1. Conventional design (most common)
+2. Dual-slope design (for large-diameter units)
+3. Thixopost design (with rake blades on vertical posts)
+Peripheral speeds vary by application:
+1-2 m/min for low-density sludges
+3-8 m/min for slow-settling solids
+9-13 m/min for fast-settling solids
+13-30 m/min for coarse/crystalline solids
+
+
+==================================================
+SLIDE 35
+==================================================
+
+Feed Systems
+Components include:
+Feed slurry launder or pipe
+Feedwell to dissipate energy and provide smooth transition
+For flocculated feeds:
+Minimize shear
+Ideally enter at water level
+Avoid excessive drops (>0.3 m) that degrade floc structure
+
+
+==================================================
+SLIDE 36
+==================================================
+
+Underflow Removal Systems
+Four basic configurations:
+1. Steep-angled cone with bridge-supported drives
+2. Trench with multiple outlets for column-supported drives
+3. Ports in the center column base
+4. Peripheral discharge (flat-bottom with collection sumps)
+Four basic pumping arrangements:
+1. Perimeter pumps with buried piping
+2. Pumps at perimeter or under discharge cone with tunnel access
+3. Perimeter pumps with peripheral discharge
+4. Center-column pumping
+
+
+==================================================
+SLIDE 37
+==================================================
+
+Overflow Collection
+Clarified overflow typically flows into a peripheral launder via:
+V-notch or flat weir
+Submerged orifices
+Submerged pipes (for winter operations or additional storage)
+Launder arrangements:
+Inside or outside tank placement
+Radial launders for uniform upward flow
+Annular launders with dual-sided overflow
+
+
+==================================================
+SLIDE 38
+==================================================
+
+Hydraulic design standards:
+Municipal applications: 3.5-15 m³/h per meter of weir length
+Industrial thickeners: 5-25 m³/h per meter
+
+
+==================================================
+SLIDE 39
+==================================================
+
+Section 9: Specialized Designs
+High-Rate Thickeners
+Distinguished by specially designed feedwells and flocculation systems
+Features:
+Feed transfer without floc destruction
+Possible introduction beneath sludge blanket
+Hydraulic or mechanical mixing of flocculant
+Can increase settling rates 2-10 times over conventional thickeners
+Significantly reduces required area
+
+
+==================================================
+SLIDE 40
+==================================================
+
+Solids-Contact Clarifiers
+Designed to enhance flocculation with:
+Large circular feedwells with slow-speed mixers
+Solids recirculation systems
+Conical reaction wells with decreasing velocity gradient
+Operating rates of 2-5 m³/(h)(m²)
+
+
+==================================================
+SLIDE 41
+==================================================
+
+Cone Clarifiers and Thickeners
+Inverted cone designs operating without mechanical rakes
+Uses the sludge blanket principle
+Typically:
+Introduce feed near cone apex (60-90° included angle)
+Maintain fluidized solids near overflow level
+Operate at 5-10 m³/(h)(m²)
+Achieve 10-40 mg/L overflow suspended solids
+
+
+==================================================
+SLIDE 42
+==================================================
+
+Inclined-Plate Clarifiers
+Also known as lamella, lamina, or tube settlers
+Employ closely spaced parallel plates at 45-60° angles
+Each plate acts as a separate clarifier
+Flow patterns: concurrent, crosscurrent, or countercurrent
+Plate spacing: 25-100 mm, lengths of 1-3 m
+Theoretical area: A_t = n cos(α)(l × w)
+Typical operating rates: 0.5-3 m³/(h)(m²)
+
+
+==================================================
+SLIDE 43
+==================================================
+
+Section 10: Instrumentation and Control
+Purpose of Instrumentation
+Instrumentation serves to:
+Protect drive mechanisms
+Control and optimize performance
+Provide operational information
+
+
+==================================================
+SLIDE 44
+==================================================
+
+Key Variables and Controls
+Independent variables:
+Feed rate and solids concentration
+Flocculant rate
+Underflow pumping rate
+Dependent variables:
+Pulp-bed level
+Feed pulp settling velocity
+Underflow density
+Overflow clarity
+
+
+==================================================
+SLIDE 45
+==================================================
+
+Common Control Methods
+Flocculant addition based on solids loading or settling velocity
+Underflow pumping controlled by density or bed level
+Material balance calculation using flow and density measurements
+
+
+==================================================
+SLIDE 46
+==================================================
+
+Section 11: Operation and Troubleshooting
+Start-up Procedures
+1. Check all equipment for proper working order
+2. Verify lubrication, rotation direction, and torque controls
+3. Calibrate instrumentation if automated
+4. Prepare reagents at proper concentrations
+5. Start with empty tank or filled with clear liquid
+6. Start rake drives before introducing feed
+7. Activate flocculant system when feed enters
+8. Begin underflow pumping immediately if coarse solids are present
+9. Adjust parameters for desired performance
+
+
+==================================================
+SLIDE 47
+==================================================
+
+Operation Guidelines
+Control underflow pumping and flocculation to maintain constant pulp level
+Minimize flocculant dosage while maintaining specifications
+Monitor torque to keep below 30% of cutout value during normal operation
+Adjust parameters based on process changes and quality requirements
+
+
+==================================================
+SLIDE 48
+==================================================
+
+High Torque Issues
+Causes:
+Insufficient underflow pumping
+Sanding conditions
+Islands (solids accumulation in rake structure)
+Solutions:
+Correct underflow withdrawal problems quickly
+Temporarily raise rakes during unplugging
+Increase rake speed for sanding conditions (50-100%)
+Periodically raise mechanism to prevent island formation
+
+
+==================================================
+SLIDE 49
+==================================================
+
+Pulp Level Issues
+Diagnosis and causes:
+Rapid rise with reduced interface density: flocculant loss
+Gradual increase: reduced pumping capacity or increased feed rate
+Increased density and torque: reduced pumping rate
+Sudden drop: reduced solids loading
+
+
+==================================================
+SLIDE 50
+==================================================
+
+Quality Issues
+Poor clarity causes:
+Air entrainment in feed
+Improper flocculant type
+Incorrect pulp-bed level
+Excessive flow rate
+Low underflow density causes:
+Wrong flocculant type
+Insufficient dosage
+Overpumping
+Insufficient raking capacity ("rat-holing")
+
+
+==================================================
+SLIDE 51
+==================================================
+
+Section 12: Volume Calculation Methods
+Volume Calculation Components
+Total volume is sum of three geometric sections:
+1. Cylindrical Section: Volume = π × r^2 × h Where r = tank radius, h = sidewall height
+2. Sloped Bottom Section (frustum of cone): Volume = (1/3) × π × h × (R^2 + r^2 + R × r) Where R =
+tank radius, r = cone radius, h = height based on slope
+3. Center Cone: Volume = (1/3) × π × r^2 × h Where r = cone radius, h = height based on cone angle
+
+
+==================================================
+SLIDE 52
+==================================================
+
+Summary
+Sedimentation is a fundamental process for solid-liquid separation
+Equipment designs vary based on application requirements
+Conventional thickeners rely on properly sized basin areas and mechanical systems
+Understanding settling regimes is critical for proper equipment sizing
+Multiple calculation methodologies exist for different applications
+Equipment features and operational parameters must be carefully selected
+Effective control and troubleshooting ensure optimal performance
+
+
+==================================================
+SLIDE 53
+==================================================
+
+Mineral Processing Thickeners
+Case Study: Potash Processing Operation
+Part 2
+Case Study Outline
+Overview of Potash Processing Operation
+Thickener Functions in the Process
+Specifications of Three Thickeners
+Carnallite Thickener
+Flotation Thickener
+Product Thickener
+Design Calculations and Verification
+Comparative Analysis
+Key Performance Insights
+
+
+==================================================
+SLIDE 54
+==================================================
+
+Section 1: Potash Processing Overview
+Potash Processing Context
+Potash is primarily composed of potassium chloride (KCl)
+Used mainly for fertilizer production
+Processing involves separating KCl from other minerals
+Multiple stages of separation, concentration and purification
+Thickeners play critical role in solid-liquid separation throughout process
+
+
+==================================================
+SLIDE 55
+==================================================
+
+Process Streams
+Three main process streams requiring thickening:
+1. Carnallite Stream:
+High in Carnallite (KCl·MgCl₂·6H₂O)
+Significant NaCl content
+Medium-density solids
+2. Flotation Stream:
+Highest Carnallite content
+Minimal NaCl
+Lower density solids
+3. Product Stream:
+Refined KCl product
+Minimal impurities
+Higher density solids
+
+
+==================================================
+SLIDE 56
+==================================================
+
+Section 2: Thickener Functions
+Role of Thickeners in Potash Processing
+Carnallite Thickener:
+Primary thickening of Carnallite material
+Handles mixed salt composition
+Some solids carryover in overflow
+Flotation Thickener:
+Processes highest Carnallite content
+Complete separation (no solids in overflow)
+Operates with lowest density solids
+Product Thickener:
+Final thickening of refined KCl product
+Operates at lower temperature
+Handles highest density solids
+
+
+==================================================
+SLIDE 57
+==================================================
+
+Section 3: Thickener Specifications
+Manufacturer Information
+All three thickeners manufactured by Wemco GB
+Carnallite Thickener: Model B60B2P
+Flotation Thickener: Model B60B2P
+Product Thickener: Model W4DP
+Different models reflect different application requirements and material handling characteristics
+
+
+==================================================
+SLIDE 58
+==================================================
+
+Physical Dimensions Comparison
+ Parameter Carnallite Flotation Product
+Tank Diameter 37 m 35 m 20 m
+Sidewall Height 3.0 m 3.0 m 3.0 m
+Long Rake Diameter 36.75 m 34.75 m 19.8 m
+Short Rake Diameter 12 m 10 m 7 m
+Feedwell Diameter 4.7 m 3.9 m 2.8 m
+Bottom Slope 8.2° 8.2° 8.2°
+
+
+==================================================
+SLIDE 59
+==================================================
+
+Mechanical Systems - Rake Drive
+ Parameter Carnallite Flotation Product
+Drive Motors 2 2 1
+Power Rating 7.5 kW each 7.5 kW each 7.5 kW
+Duty Rated Torque 543,268 Nm 543,268 Nm 135,817 Nm
+Design Torque 814,902 Nm 814,902 Nm 203,726 Nm
+Rake Speed 0.15 RPM 0.17 RPM 0.29 RPM
+Note the inverse relationship between diameter and rake speed
+
+
+==================================================
+SLIDE 60
+==================================================
+
+Mechanical Systems - Lift and Discharge
+ Parameter Carnallite Flotation Product
+Lift Motor 1.1 kW 1.1 kW 1.1 kW
+Lift Height 0.6 m 0.6 m 0.6 m
+Discharge Nozzle 14 inches 12 inches 8 inches
+Discharge Nozzles 2 2 2
+Discharge components scale with solids handling requirements
+
+
+==================================================
+SLIDE 61
+==================================================
+
+Section 4: Process Parameters - Carnallite Thickener
+Carnallite Thickener Feed Composition
+NaCl: 39.6 tph
+KCl: 0 tph
+Carnallite: 180.8 tph
+Total Solids: 220.4 tph
+Flow Rates:
+Brine: 1289.0 tph
+Slurry Weight: 1509.4 tph
+Slurry Volume: 1121.3 m³/hr
+
+
+==================================================
+SLIDE 62
+==================================================
+
+Carnallite Thickener Feed Properties
+Density:
+Solids Density: 1.673 g/cc
+Brine Density: 1.302 g/cc
+Slurry Density: 1.346 g/cc
+Temperature: 31°C
+Solids Content: 14.6% by weight
+
+
+==================================================
+SLIDE 63
+==================================================
+
+Carnallite Thickener Underflow Characteristics
+Material Flows:
+Solids: 216.2 tph
+Brine: 264.3 tph
+Slurry: 480.5 tph
+Volume: 331.0 m³/hr
+Properties:
+Slurry Density: 1.448 g/cc
+Solids by Weight: 45.0%
+Solids by Volume: 38.8%
+Viscosity: 400 cP
+
+
+==================================================
+SLIDE 64
+==================================================
+
+Carnallite Thickener Overflow Characteristics
+Material Flows:
+Weight: 1028.9 tph
+Volume: 789.4 m³/hr
+Properties:
+Viscosity: 6 cP
+Solids by Weight: 0.4%
+Note: Some solids carryover in overflow
+
+
+==================================================
+SLIDE 65
+==================================================
+
+Carnallite Thickener Maximum Design Parameters
+Feed Volume: 1582 m³/hr
+Underflow:
+Solids: 279 tph
+Slurry: 558 tph
+Volume: 382 m³/hr
+Density: 1.462 g/cc
+Solids by Weight: 50.0%
+Overflow Volume: 1200 m³/hr
+
+
+==================================================
+SLIDE 66
+==================================================
+
+Carnallite Thickener Particle Size Distribution
+5% greater than 1.4 mm
+12% greater than 1.0 mm
+28% greater than 0.5 mm
+44% greater than 0.30 mm
+62% greater than 0.21 mm
+Relatively coarse particle distribution affects settling characteristics
+
+
+==================================================
+SLIDE 67
+==================================================
+
+Carnallite Thickener Settling Analysis
+Unit Area: 3.85 m²/tph
+Limiting Settling Velocity: 0.26 m/hr
+Adjusted Settling Velocity (Talmage-Fitch): 0.18 m/hr
+Required Thickener Area: 1,075 m²
+Volume Calculation:
+Cylindrical Section: 3,225 m³
+Sloped Bottom Section: 960 m³
+Center Cone: 2 m³
+Total Volume: 4,187 m³
+
+
+==================================================
+SLIDE 68
+==================================================
+
+Section 5: Process Parameters - Flotation Thickener
+Flotation Thickener Feed Composition
+NaCl: 10.4 tph
+KCl: 0 tph
+Carnallite: 211.0 tph
+Total Solids: 221.4 tph
+Flow Rates:
+Brine: 1004.9 tph
+Slurry Weight: 1226.3 tph
+Slurry Volume: 908.5 m³/hr
+
+
+==================================================
+SLIDE 69
+==================================================
+
+Flotation Thickener Feed Properties
+Density:
+Solids Density: 1.516 g/cc
+Brine Density: 1.302 g/cc
+Slurry Density: 1.350 g/cc
+Temperature: 31°C
+Solids Content: 18.1% by weight
+
+
+==================================================
+SLIDE 70
+==================================================
+
+Flotation Thickener Underflow Characteristics
+Material Flows:
+Solids: 221.4 tph
+Brine: 270.6 tph
+Slurry: 492.0 tph
+Volume: 344.5 m³/hr
+Properties:
+Slurry Density: 1.428 g/cc
+Solids by Weight: 45.0%
+Solids by Volume: 39.7%
+Viscosity: 400 cP
+
+
+==================================================
+SLIDE 71
+==================================================
+
+Flotation Thickener Overflow Characteristics
+Material Flows:
+Weight: 734.3 tph
+Volume: 564.0 m³/hr
+Properties:
+Viscosity: 5 cP
+Solids by Weight: 0%
+Complete separation achieved (no solids in overflow)
+
+
+==================================================
+SLIDE 72
+==================================================
+
+Flotation Thickener Maximum Design Parameters
+Feed Volume: 1045 m³/hr
+Underflow:
+Solids: 288 tph
+Slurry: 576 tph
+Volume: 399 m³/hr
+Density: 1.444 g/cc
+Solids by Weight: 50.0%
+Overflow Volume: 646 m³/hr
+
+
+==================================================
+SLIDE 73
+==================================================
+
+Flotation Thickener Particle Size Distribution
+6% greater than 1.4 mm
+15% greater than 1.0 mm
+33% greater than 0.5 mm
+50% greater than 0.30 mm
+80% greater than 0.21 mm
+Higher percentage of fine particles compared to Carnallite Thickener
+
+
+==================================================
+SLIDE 74
+==================================================
+
+Flotation Thickener Settling Analysis
+Unit Area: 3.34 m²/tph
+Limiting Settling Velocity: 0.30 m/hr
+Adjusted Settling Velocity (Talmage-Fitch): 0.19 m/hr
+Required Thickener Area: 962 m²
+Volume Calculation:
+Cylindrical Section: 2,887 m³
+Sloped Bottom Section: 841 m³
+Center Cone: 2 m³
+Total Volume: 3,730 m³
+
+
+==================================================
+SLIDE 75
+==================================================
+
+Section 6: Process Parameters - Product Thickener
+Product Thickener Feed Composition
+NaCl: 2.0 tph
+KCl: 64.6 tph
+Carnallite: Trace
+Total Solids: 66.6 tph
+Flow Rates:
+Brine: 546.8 tph
+Slurry Weight: 613.4 tph
+Slurry Volume: 468.1 m³/hr
+
+
+==================================================
+SLIDE 76
+==================================================
+
+Product Thickener Feed Properties
+Density:
+Solids Density: 1.995 g/cc
+Brine Density: 1.258 g/cc
+Slurry Density: 1.310 g/cc
+Temperature: 26°C
+Solids Content: 10.9% by weight
+
+
+==================================================
+SLIDE 77
+==================================================
+
+Product Thickener Underflow Characteristics
+Material Flows:
+Solids: 66.6 tph
+Brine: 81.4 tph
+Slurry: 148.0 tph
+Volume: 98.1 m³/hr
+Properties:
+Slurry Density: 1.509 g/cc
+Solids by Weight: 45.0%
+Solids by Volume: 34.0%
+Viscosity: 250 cP
+
+
+==================================================
+SLIDE 78
+==================================================
+
+Product Thickener Overflow Characteristics
+Material Flows:
+Weight: 465.4 tph
+Volume: 370.0 m³/hr
+Properties:
+Viscosity: 5 cP
+Solids by Weight: 0%
+Complete separation achieved (no solids in overflow)
+
+
+==================================================
+SLIDE 79
+==================================================
+
+Product Thickener Maximum Design Parameters
+Feed Volume: 539 m³/hr
+Underflow:
+Solids: 89 tph
+Slurry: 173 tph
+Volume: 112 m³/hr
+Density: 1.543 g/cc
+Solids by Weight: 50.0%
+Overflow Volume: 423 m³/hr
+
+
+==================================================
+SLIDE 80
+==================================================
+
+Product Thickener Particle Size Distribution
+0% greater than 1.4 mm
+0% greater than 1.0 mm
+8% greater than 0.5 mm
+45% greater than 0.30 mm
+70% greater than 0.21 mm
+Finest particle distribution among all three thickeners
+
+
+==================================================
+SLIDE 81
+==================================================
+
+Product Thickener Settling Analysis
+Unit Area: 3.53 m²/tph
+Limiting Settling Velocity: 0.28 m/hr
+Adjusted Settling Velocity (Talmage-Fitch): 0.22 m/hr
+Required Thickener Area: 314 m²
+Volume Calculation:
+Cylindrical Section: 942 m³
+Sloped Bottom Section: 149 m³
+Center Cone: 2 m³
+Total Volume: 1,093 m³
+
+
+==================================================
+SLIDE 82
+==================================================
+
+Section 7: Design Calculations and Verification
+Design Verification Approach
+For each thickener, we'll:
+1. Apply key design equations from Part 1
+2. Calculate important parameters
+3. Compare with actual specifications
+4. Identify factors influencing design decisions
+This demonstrates the practical application of thickener design principles
+
+
+==================================================
+SLIDE 83
+==================================================
+
+Area Calculation - Carnallite Thickener
+Using Talmage-Fitch method:
+Unit Area = t_u/(C_o H_o)
+Given:
+Total solids throughput: 220.4 tph
+Unit area requirement: 3.85 m²/tph (from settling tests)
+Required thickener area: Area = 220.4 tph × 3.85 m²/tph = 848.5 m²
+With safety factor (1.41): Area with safety = 848.5 × 1.41 = 1,196 m²
+Actual provided area (from specs): 1,075 m²
+
+
+==================================================
+SLIDE 84
+==================================================
+
+Diameter Calculation - Carnallite Thickener
+From the required area:
+Diameter = 2 × sqrt(Area/π)
+Diameter = 2 × sqrt(1,075 m²/π) = 36.97 m
+Actual diameter (from specs): 37 m
+Very close match between calculated and actual diameter!
+
+
+==================================================
+SLIDE 85
+==================================================
+
+Area Calculation - Flotation Thickener
+Given:
+Total solids throughput: 221.4 tph
+Unit area requirement: 3.34 m²/tph (from settling tests)
+Required thickener area: Area = 221.4 tph × 3.34 m²/tph = 739.5 m²
+With safety factor (1.15): Area with safety = 739.5 × 1.15 = 850.4 m²
+Actual provided area (from specs): 962 m²
+
+
+==================================================
+SLIDE 86
+==================================================
+
+Diameter Calculation - Flotation Thickener
+From the required area:
+Diameter = 2 × sqrt(Area/π)
+Diameter = 2 × sqrt(962 m²/π) = 35.0 m
+Actual diameter (from specs): 35 m
+Perfect match between calculated and actual diameter!
+
+
+==================================================
+SLIDE 87
+==================================================
+
+Area Calculation - Product Thickener
+Given:
+Total solids throughput: 66.6 tph
+Unit area requirement: 3.53 m²/tph (from settling tests)
+Required thickener area: Area = 66.6 tph × 3.53 m²/tph = 235.1 m²
+With safety factor (1.15): Area with safety = 235.1 × 1.15 = 270.4 m²
+Actual provided area (from specs): 314 m²
+
+
+==================================================
+SLIDE 88
+==================================================
+
+Diameter Calculation - Product Thickener
+From the required area:
+Diameter = 2 × sqrt(Area/π)
+Diameter = 2 × sqrt(314 m²/π) = 20.0 m
+Actual diameter (from specs): 20 m
+Perfect match between calculated and actual diameter!
+
+
+==================================================
+SLIDE 89
+==================================================
+
+Verification Using Coe and Clevenger Method
+Let's verify the Carnallite Thickener area using Coe and Clevenger method:
+Unit Area (m²/tpd) = (1/C - 1/C_u)/v
+Where:
+C = feed solids concentration = 0.146 kg/L
+Cu = underflow solids concentration = 0.45 kg/L
+v = initial settling rate = 0.18 m/d (adjusted)
+Unit Area = (1/0.146 - 1/0.45)/0.18 = (6.85 - 2.22)/0.18 = 4.63/0.18 = 25.7 m²/tpd
+For 220.4 tph (5,290 tpd): Area = 5,290 × 25.7/24 = 5,664 m²
+
+
+==================================================
+SLIDE 90
+==================================================
+
+Coe and Clevenger Method Analysis
+This is much larger than the actual area, suggesting that:
+1. The settling tests likely used flocculants
+2. The Talmage-Fitch method was more appropriate for this application
+
+
+==================================================
+SLIDE 91
+==================================================
+
+Torque Calculation - Carnallite Thickener
+Using the torque equation:
+Torque (Nm) = K × Diameter^2
+For heavy duty application (copper tails, iron tails): K ≈ 150-290 N/m
+Torque = 225 × 37^2 = 307,575 Nm
+Actual design torque: 814,902 Nm
+The higher actual torque suggests very challenging material properties requiring additional safety factor
+
+
+==================================================
+SLIDE 92
+==================================================
+
+Torque Calculation - Flotation Thickener
+Torque = 225 × 35^2 = 275,625 Nm
+Actual design torque: 814,902 Nm
+Similar to Carnallite Thickener, the design includes significant safety factor
+
+
+==================================================
+SLIDE 93
+==================================================
+
+Torque Calculation - Product Thickener
+Torque = 185 × 20^2 = 74,000 Nm
+Actual design torque: 203,726 Nm
+Closer match between calculated and actual torque, but still includes safety factor
+
+
+==================================================
+SLIDE 94
+==================================================
+
+Volume Calculation - Carnallite Thickener
+1. Cylindrical Section: Volume = π × r^2 × h = π × 18.5^2 × 3 = 3,225 m^3
+2. Sloped Bottom Section (with slope of 8.2°): Volume ≈ 960 m^3 (calculated from dimensions)
+3. Center Cone: Volume = (1/3) × π × r^2 × h = (1/3) × π × 1.25^2 × 1.25 ≈ 2 m^3
+Total Volume: 3,225 + 960 + 2 = 4,187 m³
+Matches exactly with specified volume
+
+
+==================================================
+SLIDE 95
+==================================================
+
+Section 8: Comparative Analysis
+Process Function Comparison
+The three thickeners serve different roles in the mineral processing circuit:
+1. Carnallite Thickener:
+Processes primarily Carnallite material (180.8 tph)
+Handles significant NaCl content (39.6 tph)
+Operates with medium density solids (1.673 g/cc)
+Has some solids carryover in overflow (0.4%)
+2. Flotation Thickener:
+Processes highest Carnallite content (211.0 tph)
+Minimal NaCl content (10.4 tph)
+Operates with lowest density solids (1.516 g/cc)
+Complete separation with no solids in overflow
+3. Product Thickener:
+Processes refined KCl product (64.6 tph)
+Minimal NaCl (2.0 tph) and trace Carnallite
+Operates with highest density solids (1.995 g/cc)
+Complete separation with no solids in overflow
+Operates at lower temperature (26°C vs 31°C)
+
+
+==================================================
+SLIDE 96
+==================================================
+
+Design Efficiency Comparison
+ Parameter Carnallite Flotation Product
+Tank Diameter (m) 37 35 20
+Normal Feed Flow (m³/hr) 1121.3 908.5 468.1
+Design Feed Flow (m³/hr) 1582 1045 539
+Overflow Ratio 0.76 0.62 0.78
+Unit Area (m²/tph) 3.85 3.34 3.53
+Settling Velocity (m/hr) 0.18 0.19 0.22
+Design Safety Factor 1.41 1.15 1.15
+
+
+==================================================
+SLIDE 97
+==================================================
+
+Equipment Scaling Analysis
+The equipment displays rational scaling based on process requirements:
+Feed System Scaling: Feed pipe diameters scale with flow rates (24" → 20" → 16")
+Underflow System Scaling: Underflow pipe diameters scale with solids handling (14" → 12" → 8")
+Drive System Scaling:
+Carnallite and Flotation (larger units): 2 motors, 814,902 Nm torque
+Product (smaller unit): 1 motor, 203,726 Nm torque
+Rake Speed Inverse Scaling: Smaller diameter units operate at higher rake speeds (Carnallite: 0.15
+RPM, Flotation: 0.17 RPM, Product: 0.29 RPM)
+
+
+==================================================
+SLIDE 98
+==================================================
+
+Settling Rate Analysis
+The Talmage-Fitch analysis reveals that the three thickeners operate with different settling velocities:
+Product Thickener: Highest settling velocity (0.22 m/hr)
+Despite handling the finest material
+Likely due to enhanced settling properties of KCl particles
+Higher density of solids (1.995 g/cc)
+Flotation Thickener: Medium settling velocity (0.19 m/hr)
+Contains highest percentage of fine particles (<0.21mm)
+Lowest solids density (1.516 g/cc)
+Carnallite Thickener: Lowest settling velocity (0.18 m/hr)
+Contains coarsest particle distribution
+Medium solids density (1.673 g/cc)
+Only thickener with solids loss in overflow (0.4%)
+
+
+==================================================
+SLIDE 99
+==================================================
+
+Section 9: Mass Balance Verification
+Carnallite Thickener Mass Balance
+Feed:
+Solids: 220.4 tph
+Brine: 1289.0 tph
+Total: 1509.4 tph
+Output:
+Underflow: 480.5 tph (Solids: 216.2 tph, Brine: 264.3 tph)
+Overflow: 1028.9 tph
+Balance check: 1509.4 tph in, 1509.4 tph out (480.5 + 1028.9) Perfect mass balance!
+Solids balance: 220.4 tph in, 216.2 tph out (to underflow) Difference: 4.2 tph = 1.9% loss to overflow 
+(reported as 0.4% in overflow)
+
+
+==================================================
+SLIDE 100
+==================================================
+
+Flotation Thickener Mass Balance
+Feed:
+Solids: 221.4 tph
+Brine: 1004.9 tph
+Total: 1226.3 tph
+Output:
+Underflow: 492.0 tph (Solids: 221.4 tph, Brine: 270.6 tph)
+Overflow: 734.3 tph
+Balance check: 1226.3 tph in, 1226.3 tph out (492.0 + 734.3) Perfect mass balance!
+Solids balance: 221.4 tph in, 221.4 tph out All solids report to underflow as designed
+
+
+==================================================
+SLIDE 101
+==================================================
+
+Product Thickener Mass Balance
+Feed:
+Solids: 66.6 tph
+Brine: 546.8 tph
+Total: 613.4 tph
+Output:
+Underflow: 148.0 tph (Solids: 66.6 tph, Brine: 81.4 tph)
+Overflow: 465.4 tph
+Balance check: 613.4 tph in, 613.4 tph out (148.0 + 465.4) Perfect mass balance!
+Solids balance: 66.6 tph in, 66.6 tph out All solids report to underflow as designed
+
+
+==================================================
+SLIDE 102
+==================================================
+
+Section 10: Application of Design Equations
+Applying Coe and Clevenger Method
+For Flotation Thickener using actual process data:
+Unit Area (m²/tpd) = (1/C - 1/C_u)/v
+Where:
+C = feed solids concentration = 0.181 kg/L
+Cu = underflow solids concentration = 0.45 kg/L
+v = initial settling rate = 0.19 m/d (adjusted)
+Unit Area = (1/0.181 - 1/0.45)/0.19 = (5.52 - 2.22)/0.19 = 3.30/0.19 = 17.4 m²/tpd
+
+
+==================================================
+SLIDE 103
+==================================================
+
+Using Talmage-Fitch Method
+For Product Thickener:
+Unit Area = t_u/(C_o H_o)
+If we assume:
+tu = time to reach critical concentration = 2 hours = 0.083 days
+Co = feed concentration = 0.109 kg/L
+Ho = initial height = 3 m
+Unit Area = 0.083/(0.109 × 3) = 0.083/0.327 = 0.254 m²/tpd
+This gives 3.05 m²/tph (considering 12 operating hours), which is close to the specified 3.53 m²/tph
+
+
+==================================================
+SLIDE 104
+==================================================
+
+Compression Zone Calculation
+For Carnallite Thickener:
+V = t_c(ρ_s-ρ_l)/[ρ_s(ρ_u-ρ_l)]
+Where:
+tc = compression time = approx. 1 hour = 0.042 days
+ρs = solids density = 1.673 g/cc
+ρl = liquid density = 1.302 g/cc
+ρu = underflow density = 1.448 g/cc
+V = 0.042(1.673-1.302)/[1.673(1.448-1.302)] = 0.042 × 0.371/1.673 × 0.146 = 0.0156/0.244 = 0.064 m³/tpd
+This helps verify the required compression zone volume
+
+
+==================================================
+SLIDE 105
+==================================================
+
+Torque Verification Using K-Factor
+The K-factor for these applications can be back-calculated:
+Carnallite Thickener: K = 814,902/37^2 = 595 N/m
+Flotation Thickener: K = 814,902/35^2 = 665 N/m
+Product Thickener: K = 203,726/20^2 = 509 N/m
+These are all significantly higher than typical K-factors (150-290 N/m), indicating:
+Very challenging material properties
+High safety factors
+Special design considerations for potash processing
+
+
+==================================================
+SLIDE 106
+==================================================
+
+Section 11: Key Insights from Design Analysis
+Material Property Influence
+1. Particle Density Impact:
+Product thickener has highest settling velocity despite finest particles
+Directly related to higher solids density (1.995 g/cc vs. ~1.6 g/cc)
+2. Particle Size Distribution:
+Carnallite thickener has coarsest distribution but lowest settling velocity
+Illustrates complex interaction between particle properties and settling
+3. Solids Content:
+All three designed for 45-50% underflow solids by weight
+Feed solids content varies significantly (10.9-18.1%)
+
+
+==================================================
+SLIDE 107
+==================================================
+
+Design Considerations
+1. Safety Factors:
+Carnallite thickener: 1.41 (highest)
+Flotation and Product thickeners: 1.15
+Suggests Carnallite stream has higher operational variability
+2. Torque Requirements:
+K-factors much higher than typical industry values
+Indicates challenging material handling properties
+Particularly high for Flotation thickener
+3. Temperature Effects:
+Product stream operates at lower temperature (26°C vs 31°C)
+May influence rheology and settling behavior
+
+
+==================================================
+SLIDE 108
+==================================================
+
+Scaling Relationships
+1. Equipment Size vs. Throughput:
+Equipment dimensions scale rationally with throughput
+Feed and underflow systems carefully sized for specific applications
+2. Rake Speed vs. Diameter:
+Smaller thickeners operate at higher rake speeds
+Maintains consistent peripheral speed for solids transport
+3. Drive Power vs. Torque:
+Larger thickeners use multiple motors for adequate torque
+Significant reserve capacity for handling upset conditions
+
+
+==================================================
+SLIDE 109
+==================================================
+
+Performance Optimization Factors
+1. Settling Rate Optimization:
+Higher settling rates reduce required area
+Product KCl particles have best natural settling properties
+Could potentially improve Carnallite and Flotation settling with optimized flocculation
+2. Underflow Density:
+All three systems target similar underflow density
+Could potentially increase with enhanced rake designs or flocculant optimization
+3. Overflow Clarity:
+Carnallite thickener has 0.4% solids carryover
+Could potentially improve with modified feedwell design or flocculation
+
+
+==================================================
+SLIDE 110
+==================================================
+
+Questions?
+Thank you for your attention!
+
+`;
+
         /**
          * Parses the raw string data into an array of slide objects.
-         * This function is carefully written to handle all 129 slides correctly.
          * @param {string} data - The raw text data containing all slides.
          * @returns {Array<Object>} An array of objects, where each object represents a slide.
          */
         function parseSlidesData(data) {
-            const slideBlocks = data.split('==================================================')
+            const slideBlocks = data.split(/==================================================|SLIDE \d+/)
                 .map(block => block.trim())
-                .filter(block => block && !block.startsWith('SLIDE'));
+                .filter(block => block.length > 0);
 
             return slideBlocks.map((block, index) => {
                 const lines = block.split('\n').filter(line => line.trim() !== '');
                 const title = lines.shift() || `Slide ${index + 1}`;
                 const content = lines.join('\n');
-                return { id: index, title, content };
+                return { title, content, isChapter: false };
             });
         }
         
@@ -1614,7 +5722,10 @@ Where k₁ and k₂ are empirically determined coefficients.
          * @returns {string} - An HTML string.
          */
         function formatContent(content) {
-            return content.split('\n').filter(line => line.trim() !== '').map(line => {
+            // Remove any lines with just [DIAGRAM X] or [IMAGE: ...]
+            const cleanedContent = content.split('\n').filter(line => !line.trim().match(/^\[(DIAGRAM|IMAGE|IMAGE PLACEHOLDER):.*\]$/)).join('\n');
+
+            return cleanedContent.split('\n').filter(line => line.trim() !== '').map(line => {
                 const trimmedLine = line.trim();
                 if (trimmedLine.endsWith(':') && trimmedLine.length < 80) {
                     return `<h3 class="text-xl md:text-2xl font-semibold text-blue-700 mt-6 mb-2">${trimmedLine}</h3>`;
@@ -1638,22 +5749,54 @@ Where k₁ and k₂ are empirically determined coefficients.
             const sideNav = document.getElementById('side-nav');
             const slideCounter = document.getElementById('slide-counter');
 
-            const slides = parseSlidesData(rawData);
+            // Create slide data
+            const slidesCh1 = parseSlidesData(chapter1Data);
+            const slidesCh2 = parseSlidesData(chapter2Data);
+            const slidesCh3 = parseSlidesData(chapter3Data);
+            const slidesCh4 = parseSlidesData(chapter4Data);
+            const slidesCh5 = parseSlidesData(chapter5Data);
+            const slidesCh6 = parseSlidesData(chapter6Data);
+
+            
+            const allSlides = [
+                { title: 'CH1 : Centrifugation in Chemical Engineering', content: '', isChapter: true },
+                ...slidesCh1,
+                { title: 'CH2 : CSTR Draft Tube Reactor for Carnallite Formation', content: '', isChapter: true },
+                ...slidesCh2,
+                { title: 'CH3 : Drying Equipment Presentation', content: '', isChapter: true },
+                ...slidesCh3,
+                { title: 'CH4 : Hydrocyclone Technology Presentation', content: '', isChapter: true },
+                ...slidesCh4,
+                { title: 'CH5 : Industrial Screening Technology_ Fundamentals and Applications', content: '', isChapter: true },
+                ...slidesCh5,
+                { title: 'CH6 : Sedimentation and Thickening Presentation', content: '', isChapter: true },
+                ...slidesCh6,
+            ];
             
             // Generate HTML for each slide and the side navigation
-            slides.forEach((slide, index) => {
+            allSlides.forEach((slide, index) => {
                 // Create slide element
                 const slideEl = document.createElement('div');
                 slideEl.className = 'slide';
                 slideEl.id = `slide-${index}`;
-                slideEl.innerHTML = `
-                    <div class="max-w-5xl w-full mx-auto bg-white rounded-xl p-6 md:p-10 shadow-lg border border-slate-200 flex flex-col h-[85vh]">
-                        <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6 flex-shrink-0">${slide.title}</h2>
-                        <div class="slide-content-body text-left text-base md:text-lg space-y-3 flex-grow overflow-y-auto pr-4">
-                            ${formatContent(slide.content)}
+
+                if (slide.isChapter) {
+                    slideEl.classList.add('chapter-slide');
+                    slideEl.innerHTML = `
+                        <div class="w-full h-full flex flex-col justify-center items-center text-center">
+                            <h1 class="text-5xl md:text-7xl font-bold text-slate-800 px-4">${slide.title}</h1>
                         </div>
-                    </div>
-                `;
+                    `;
+                } else {
+                    slideEl.innerHTML = `
+                        <div class="max-w-5xl w-full mx-auto bg-white rounded-xl p-6 md:p-10 shadow-lg border border-slate-200 flex flex-col h-[85vh]">
+                            <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6 flex-shrink-0">${slide.title}</h2>
+                            <div class="slide-content-body text-left text-base md:text-lg space-y-3 flex-grow overflow-y-auto pr-4">
+                                ${formatContent(slide.content)}
+                            </div>
+                        </div>
+                    `;
+                }
                 slidesContainer.appendChild(slideEl);
 
                 // Create nav dot element
@@ -1670,7 +5813,7 @@ Where k₁ and k₂ are empirically determined coefficients.
 
             // Function to update the UI based on the current slide
             function updateActiveSlide(index) {
-                slideCounter.textContent = `${index + 1} / ${slides.length}`;
+                slideCounter.textContent = `${index + 1} / ${allSlides.length}`;
                 dots.forEach((dot, dotIndex) => {
                     if (dotIndex === index) {
                         dot.classList.add('bg-slate-700', 'scale-125');
@@ -1697,7 +5840,7 @@ Where k₁ and k₂ are empirically determined coefficients.
                 const currentSlideIndex = Math.round(slidesContainer.scrollTop / window.innerHeight);
                 if (e.key === 'ArrowDown') {
                     e.preventDefault();
-                    const nextSlideIndex = Math.min(currentSlideIndex + 1, slides.length - 1);
+                    const nextSlideIndex = Math.min(currentSlideIndex + 1, allSlides.length - 1);
                     document.getElementById(`slide-${nextSlideIndex}`).scrollIntoView({ behavior: 'smooth' });
                 } else if (e.key === 'ArrowUp') {
                     e.preventDefault();
